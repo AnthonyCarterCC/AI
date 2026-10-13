@@ -1,4 +1,4 @@
-# CommonSense AI Portal
+# Commonsense AI Portal
 
 A growing portal for practical AI tools, training, prompt packs, downloadable resources and business guidance. The first live tool is a private, browser-only survey on its own `matchmaker.html` page that recommends one of five general-purpose AI assistants based on the user's priorities. The homepage also links to curated external training resources.
 

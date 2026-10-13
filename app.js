@@ -155,7 +155,7 @@ function showResults() {
 
 function copyResult() {
   const ranking = calculateResults();
-  const text = `My CommonSense AI match is ${ranking[0].name} (${ranking[0].score}%). Take the survey at ai.commonsense.com.au/matchmaker.html`;
+  const text = `My Commonsense AI match is ${ranking[0].name} (${ranking[0].score}%). Take the survey at ai.commonsense.com.au/matchmaker.html`;
   navigator.clipboard.writeText(text).then(() => {
     const button = $("#copy-button");
     button.textContent = "Copied!";
