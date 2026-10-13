@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Practical AI tools, prompts, downloads and guidance for Australian businesses.">
+  <meta name="theme-color" content="#10231f">
+  <title>Common Sense AI — Practical AI, minus the hype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Common Sense AI home">
+      <span class="brand-mark" aria-hidden="true">CS</span>
+      <span>Common Sense <strong>AI</strong></span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#tools">Tools</a>
+      <a href="#prompts">Prompts</a>
+      <a href="#downloads">Downloads</a>
+      <button class="nav-cta" id="header-survey-button" type="button">Take the AI quiz</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="intro">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Your practical AI portal</p>
+        <h1>Make AI useful.<br><em>Keep it human.</em></h1>
+        <p class="hero-lede">Straightforward tools, proven prompts and practical guides to help Australian businesses use AI with confidence—minus the hype.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#tools">Explore the toolkit <span aria-hidden="true">↓</span></a>
+          <span class="time-note">Free resources · Plain English</span>
+        </div>
+        <div class="trust-row" aria-label="Survey benefits">
+          <span>✓ Built for real work</span>
+          <span>✓ Independent guidance</span>
+          <span>✓ No jargon required</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbital-card card-chatgpt"><span class="tool-icon">✦</span>AI Match</div>
+        <div class="orbital-card card-claude"><span class="tool-icon">↗</span>Prompts</div>
+        <div class="orbital-card card-gemini"><span class="tool-icon">↓</span>Downloads</div>
+        <div class="orbital-card card-copilot"><span class="tool-icon">◎</span>Guides</div>
+        <div class="orbital-card card-grok"><span class="tool-icon">◇</span>Tools</div>
+        <div class="centre-badge"><span>COMMON</span><strong>SENSE</strong></div>
+      </div>
+    </section>
+
+    <section class="portal-tools" id="tools" aria-labelledby="tools-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> The toolkit</p>
+          <h2 id="tools-title">Start with what you need.</h2>
+        </div>
+        <p>One growing home for choosing, learning and using AI well. We’ll add new resources as they are tested and ready.</p>
+      </div>
+      <div class="tool-grid">
+        <article class="tool-card featured-tool">
+          <div class="card-meta"><span class="status-live">Live now</span><span>2 minutes</span></div>
+          <div>
+            <span class="large-icon" aria-hidden="true">✦</span>
+            <h3>AI Matchmaker</h3>
+            <p>Compare ChatGPT, Claude, Gemini, Copilot and Grok against the way you actually work.</p>
+          </div>
+          <button class="card-link" id="start-button" type="button">Find my AI match <span>→</span></button>
+        </article>
+        <article class="tool-card" id="prompts">
+          <div class="card-meta"><span class="status-soon">Coming soon</span><span>Prompt library</span></div>
+          <div>
+            <span class="large-icon" aria-hidden="true">↗</span>
+            <h3>Prompts that work</h3>
+            <p>Ready-to-use prompt packs for everyday business tasks, with examples and clear instructions.</p>
+          </div>
+          <span class="card-link muted">Library in development</span>
+        </article>
+        <article class="tool-card" id="downloads">
+          <div class="card-meta"><span class="status-soon">Coming soon</span><span>Resource centre</span></div>
+          <div>
+            <span class="large-icon" aria-hidden="true">↓</span>
+            <h3>Guides & downloads</h3>
+            <p>Practical checklists, policies, templates and explainers you can download and share with your team.</p>
+          </div>
+          <span class="card-link muted">Resources on the way</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="survey-shell" id="survey" hidden aria-labelledby="survey-title">
+      <div class="survey-topline">
+        <button class="text-button" id="back-button" type="button" aria-label="Go to previous question">← Back</button>
+        <p id="question-count">Question 1 of 10</p>
+        <button class="text-button" id="restart-button" type="button">Start over</button>
+      </div>
+      <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+
+      <div class="question-card">
+        <p class="question-kicker" id="question-category">Everyday fit</p>
+        <h2 id="survey-title" tabindex="-1">How important is this to you?</h2>
+        <p class="question-text" id="question-text"></p>
+        <p class="question-help" id="question-help"></p>
+
+        <fieldset class="rating-fieldset">
+          <legend>Choose from 1, not important, to 10, essential</legend>
+          <div class="rating-grid" id="rating-grid"></div>
+          <div class="scale-labels" aria-hidden="true"><span>Not important</span><span>Essential</span></div>
+        </fieldset>
+
+        <div class="question-footer">
+          <span class="keyboard-hint">Tip: use number keys, then Enter</span>
+          <button class="primary-button next-button" id="next-button" type="button" disabled>Next <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="results" hidden aria-labelledby="result-title">
+      <div class="result-heading">
+        <p class="eyebrow"><span></span> Your result</p>
+        <h2 id="result-title" tabindex="-1">Your best match is <em id="winner-name">ChatGPT</em></h2>
+        <p id="winner-summary"></p>
+      </div>
+
+      <div class="winner-panel">
+        <div class="winner-score-block">
+          <div class="winner-logo" id="winner-logo" aria-hidden="true">C</div>
+          <div>
+            <span class="match-label">Your match score</span>
+            <strong class="match-score"><span id="winner-score">92</span><small>%</small></strong>
+          </div>
+        </div>
+        <div class="why-match">
+          <h3>Why it suits you</h3>
+          <ul id="winner-reasons"></ul>
+        </div>
+        <a class="primary-button result-cta" id="winner-link" href="#" target="_blank" rel="noopener noreferrer">Explore <span id="winner-link-name">ChatGPT</span> <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="rankings-panel">
+        <div class="section-title-row">
+          <h3>Your full ranking</h3>
+          <button class="method-link" type="button" data-open-method>See our method</button>
+        </div>
+        <ol id="ranking-list" class="ranking-list"></ol>
+      </div>
+
+      <div class="result-actions">
+        <button class="secondary-button" id="retake-button" type="button">Retake the survey</button>
+        <button class="secondary-button" id="copy-button" type="button">Copy my result</button>
+      </div>
+      <p class="result-disclaimer">This is a practical fit recommendation, not a claim that one AI is objectively “best”. Features, plans and limits change often. Last reviewed October 2026.</p>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-title">
+      <p class="eyebrow light"><span></span> A common-sense comparison</p>
+      <h2 id="principles-title">No hype. Just a better starting point.</h2>
+      <div class="principle-grid">
+        <article><span>01</span><h3>Your work comes first</h3><p>We weight the things you value—not whoever has the loudest launch.</p></article>
+        <article><span>02</span><h3>The reasoning is visible</h3><p>You get a ranked result and the factors that shaped your match.</p></article>
+        <article><span>03</span><h3>You stay in control</h3><p>Your answers stay in this browser. We don’t collect or sell them.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">CS</span><span>Common Sense <strong>AI</strong></span></a>
+    <p>Helping Australian businesses make clearer technology choices.</p>
+    <p>© <span id="year"></span> Common Sense AI</p>
+  </footer>
+
+  <dialog id="method-dialog" aria-labelledby="method-title">
+    <button class="dialog-close" type="button" data-close-method aria-label="Close">×</button>
+    <p class="eyebrow"><span></span> Methodology</p>
+    <h2 id="method-title">How the match is calculated</h2>
+    <p>Each answer becomes a weight. We compare those priorities with a maintained capability profile for each assistant, then calculate a weighted fit score. A high score means the product aligns well with the things you rated most highly.</p>
+    <p>The profiles cover ecosystem fit, document work, research, coding, multimodal creation, live information, voice, ease of use, business controls and value. They are directional—not laboratory benchmarks—and should be reviewed as products change.</p>
+    <h3>Important caveats</h3>
+    <ul>
+      <li>Features vary by plan, region and account type.</li>
+      <li>AI outputs can be wrong. Verify important work.</li>
+      <li>For sensitive business data, check your organisation’s policy and the vendor’s current terms.</li>
+    </ul>
+    <button class="primary-button" type="button" data-close-method>Got it</button>
+  </dialog>
+</body>
+</html>
