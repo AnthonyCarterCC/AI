@@ -155,7 +155,7 @@ function showResults() {
 
 function copyResult() {
   const ranking = calculateResults();
-  const text = `My Common Sense AI match is ${ranking[0].name} (${ranking[0].score}%). Take the survey at ai.commonsense.com.au`;
+  const text = `My CommonSense AI match is ${ranking[0].name} (${ranking[0].score}%). Take the survey at ai.commonsense.com.au/matchmaker.html`;
   navigator.clipboard.writeText(text).then(() => {
     const button = $("#copy-button");
     button.textContent = "Copied!";
@@ -164,7 +164,6 @@ function copyResult() {
 }
 
 $("#start-button").addEventListener("click", beginSurvey);
-$("#header-survey-button").addEventListener("click", beginSurvey);
 $("#restart-button").addEventListener("click", beginSurvey);
 $("#retake-button").addEventListener("click", beginSurvey);
 $("#next-button").addEventListener("click", nextQuestion);
