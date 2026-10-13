@@ -18,31 +18,31 @@ const products = {
     scores: { easy: 10, microsoft: 6, google: 7, writing: 9, research: 10, coding: 10, media: 10, live: 8, voice: 10, business: 9 },
     summary: "A strong all-round choice when you want one flexible assistant for research, creation, analysis, coding and conversation.",
     strengths: { easy: "polished all-round experience", research: "deep, source-backed research", coding: "strong building and coding tools", media: "broad image and file capabilities", voice: "natural voice interaction", business: "mature team and business options" },
-    url: "https://chatgpt.com/", colour: "#10a37f", initial: "C"
+    url: "https://chatgpt.com/", colour: "#10a37f", initial: "C", logo: "assets/logos/chatgpt.svg"
   },
   Claude: {
     scores: { easy: 9, microsoft: 5, google: 7, writing: 10, research: 9, coding: 10, media: 6, live: 7, voice: 7, business: 9 },
     summary: "A particularly good fit for careful writing, long documents, nuanced thinking and collaborative coding or prototype work.",
     strengths: { writing: "careful long-form writing and document work", coding: "strong coding and interactive Artifacts", research: "research with clear synthesis", business: "useful project knowledge and team controls", easy: "calm, focused conversational experience" },
-    url: "https://claude.ai/", colour: "#d87955", initial: "C"
+    url: "https://claude.ai/", colour: "#d87955", initial: "C", logo: "assets/logos/claude.svg"
   },
   Gemini: {
     scores: { easy: 9, microsoft: 4, google: 10, writing: 8, research: 10, coding: 9, media: 10, live: 9, voice: 10, business: 9 },
     summary: "A natural match when your work centres on Google, with excellent multimodal, research, mobile and Workspace integration.",
     strengths: { google: "deep Google Workspace integration", research: "Deep Research and broad web access", media: "strong image, audio and video workflows", voice: "excellent mobile and live interaction", business: "enterprise options within Workspace" },
-    url: "https://gemini.google.com/", colour: "#527ceb", initial: "G"
+    url: "https://gemini.google.com/", colour: "#527ceb", initial: "G", logo: "assets/logos/gemini.svg"
   },
   Copilot: {
     scores: { easy: 8, microsoft: 10, google: 3, writing: 8, research: 8, coding: 8, media: 8, live: 8, voice: 8, business: 10 },
     summary: "The clearest fit for organisations invested in Microsoft 365, especially when work already happens in Office, Outlook and Teams.",
     strengths: { microsoft: "native Microsoft 365 fit", business: "strong organisational controls and Microsoft Graph context", writing: "assistance inside familiar Office workflows", research: "web-grounded research and workplace search", voice: "voice access across Copilot experiences" },
-    url: "https://copilot.microsoft.com/", colour: "#7e57c2", initial: "C"
+    url: "https://copilot.microsoft.com/", colour: "#7e57c2", initial: "C", logo: "assets/logos/copilot.svg"
   },
   Grok: {
     scores: { easy: 8, microsoft: 3, google: 4, writing: 7, research: 8, coding: 8, media: 9, live: 10, voice: 8, business: 6 },
     summary: "A distinctive option if real-time public conversation, emerging news and the X ecosystem matter more than office-suite integration.",
     strengths: { live: "real-time awareness and the X ecosystem", media: "capable visual and multimodal tools", research: "fast exploration of current topics", voice: "conversational mobile access", coding: "solid technical problem-solving" },
-    url: "https://grok.com/", colour: "#202020", initial: "G"
+    url: "https://grok.com/", colour: "#202020", initial: "G", logo: "assets/logos/grok.svg"
   }
 };
 
@@ -62,7 +62,46 @@ function beginSurvey() {
   state.current = 0;
   state.answers = {};
   showOnly(survey);
+  updateLiveChart();
   renderQuestion();
+}
+
+function buildLiveChart() {
+  $("#live-chart-list").innerHTML = Object.entries(products).map(([name, product]) => `
+    <li class="live-product-row" data-product="${name}">
+      <div class="live-product-label">
+        <span>${name}</span>
+        <output aria-label="${name} live fit score">5.0</output>
+      </div>
+      <div class="live-product-track" aria-hidden="true">
+        <span class="live-product-marker" data-logo="${product.logo}" style="left:44.44%; --product-colour:${product.colour}"></span>
+      </div>
+    </li>`).join("");
+  document.querySelectorAll(".live-product-marker").forEach(async marker => {
+    const response = await fetch(marker.dataset.logo);
+    marker.innerHTML = await response.text();
+  });
+}
+
+function liveScores() {
+  const answered = questions.filter(question => Object.hasOwn(state.answers, question.key));
+  return Object.entries(products).map(([name, product]) => {
+    if (!answered.length) return { name, score: 5 };
+    const movement = answered.reduce((sum, question) => {
+      const importance = state.answers[question.key] / 10;
+      return sum + importance * (product.scores[question.key] - 5);
+    }, 0) / answered.length;
+    return { name, score: Math.max(1, Math.min(10, 5 + movement)) };
+  });
+}
+
+function updateLiveChart() {
+  liveScores().forEach(({ name, score }) => {
+    const row = document.querySelector(`[data-product="${name}"]`);
+    if (!row) return;
+    row.querySelector("output").value = score.toFixed(1);
+    row.querySelector(".live-product-marker").style.left = `${((score - 1) / 9) * 100}%`;
+  });
 }
 
 function renderQuestion() {
@@ -70,7 +109,7 @@ function renderQuestion() {
   $("#question-count").textContent = `Question ${state.current + 1} of ${questions.length}`;
   $("#progress-bar").style.width = `${((state.current + 1) / questions.length) * 100}%`;
   $("#question-category").textContent = question.category;
-  $("#question-text").textContent = question.text;
+  $("#survey-title").textContent = question.text;
   $("#question-help").textContent = question.help;
   $("#back-button").style.visibility = state.current === 0 ? "hidden" : "visible";
   $("#next-button").textContent = state.current === questions.length - 1 ? "See my result →" : "Next →";
@@ -100,6 +139,7 @@ function selectRating(value) {
     button.setAttribute("aria-pressed", selected ? "true" : "false");
   });
   $("#next-button").disabled = false;
+  updateLiveChart();
 }
 
 function nextQuestion() {
@@ -135,8 +175,8 @@ function showResults() {
   $("#winner-name").textContent = winner.name;
   $("#winner-summary").textContent = winner.product.summary;
   $("#winner-score").textContent = winner.score;
-  $("#winner-logo").textContent = winner.product.initial;
-  $("#winner-logo").style.background = winner.product.colour;
+  $("#winner-logo").style.borderColor = winner.product.colour;
+  fetch(winner.product.logo).then(response => response.text()).then(svg => { $("#winner-logo").innerHTML = svg; });
   $("#winner-link").href = winner.product.url;
   $("#winner-link-name").textContent = winner.name;
   $("#winner-reasons").innerHTML = bestReasons(winner.product).map(reason => `<li>${reason}</li>`).join("");
@@ -177,6 +217,7 @@ document.addEventListener("keydown", event => {
 });
 
 const methodDialog = $("#method-dialog");
+buildLiveChart();
 document.querySelectorAll("[data-open-method]").forEach(button => button.addEventListener("click", () => methodDialog.showModal()));
 document.querySelectorAll("[data-close-method]").forEach(button => button.addEventListener("click", () => methodDialog.close()));
 methodDialog.addEventListener("click", event => { if (event.target === methodDialog) methodDialog.close(); });

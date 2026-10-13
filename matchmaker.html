@@ -30,6 +30,7 @@
         <p class="eyebrow"><span></span> Independent AI fit check</p>
         <h1>Five leading AI tools.<br><em>One that fits you.</em></h1>
         <p class="hero-lede">Tell us what matters in the way you work. In two minutes, we’ll compare ChatGPT, Claude, Gemini, Copilot and Grok—and explain your best match.</p>
+        <p class="brand-line">Human judgement. <strong>AI capability.</strong></p>
         <div class="hero-actions">
           <button class="primary-button" id="start-button" type="button">Start the matchmaker <span aria-hidden="true">→</span></button>
           <span class="time-note">10 questions · No sign-up</span>
@@ -58,20 +59,28 @@
         <button class="text-button" id="restart-button" type="button">Start over</button>
       </div>
       <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
-      <div class="question-card">
-        <p class="question-kicker" id="question-category">Everyday fit</p>
-        <h2 id="survey-title" tabindex="-1">How important is this to you?</h2>
-        <p class="question-text" id="question-text"></p>
-        <p class="question-help" id="question-help"></p>
-        <fieldset class="rating-fieldset">
-          <legend>Choose from 1, not important, to 10, essential</legend>
-          <div class="rating-grid" id="rating-grid"></div>
-          <div class="scale-labels" aria-hidden="true"><span>Not important</span><span>Essential</span></div>
-        </fieldset>
-        <div class="question-footer">
-          <span class="keyboard-hint">Tip: use number keys, then Enter</span>
-          <button class="primary-button next-button" id="next-button" type="button" disabled>Next <span aria-hidden="true">→</span></button>
+      <div class="survey-layout">
+        <div class="question-card">
+          <p class="question-kicker" id="question-category">Everyday fit</p>
+          <h2 id="survey-title" class="question-text" tabindex="-1"></h2>
+          <p class="question-help" id="question-help"></p>
+          <fieldset class="rating-fieldset">
+            <legend>Choose from 1, not important, to 10, essential</legend>
+            <div class="rating-grid" id="rating-grid"></div>
+            <div class="scale-labels" aria-hidden="true"><span>Not important</span><span>Essential</span></div>
+          </fieldset>
+          <div class="question-footer">
+            <span class="keyboard-hint">Tip: use number keys, then Enter</span>
+            <button class="primary-button next-button" id="next-button" type="button" disabled>Next <span aria-hidden="true">→</span></button>
+          </div>
         </div>
+        <aside class="live-match-chart" aria-labelledby="live-chart-title">
+          <p class="question-kicker">Live comparison</p>
+          <h2 id="live-chart-title">Your match in motion</h2>
+          <p class="live-chart-intro">All five begin at 5. Your judgement shifts the capability fit.</p>
+          <ol class="live-chart-list" id="live-chart-list"></ol>
+          <div class="live-chart-scale" aria-hidden="true"><span>1</span><span>5</span><span>10</span></div>
+        </aside>
       </div>
     </section>
 
@@ -82,7 +91,7 @@
         <p id="winner-summary"></p>
       </div>
       <div class="winner-panel">
-        <div class="winner-score-block"><div class="winner-logo" id="winner-logo" aria-hidden="true">C</div><div><span class="match-label">Your match score</span><strong class="match-score"><span id="winner-score">92</span><small>%</small></strong></div></div>
+        <div class="winner-score-block"><div class="winner-logo" id="winner-logo" aria-hidden="true"></div><div><span class="match-label">Your match score</span><strong class="match-score"><span id="winner-score">92</span><small>%</small></strong></div></div>
         <div class="why-match"><h3>Why it suits you</h3><ul id="winner-reasons"></ul></div>
         <a class="primary-button result-cta" id="winner-link" href="#" target="_blank" rel="noopener noreferrer">Explore <span id="winner-link-name">ChatGPT</span> <span aria-hidden="true">↗</span></a>
       </div>
@@ -107,7 +116,7 @@
 
   <footer>
     <a class="brand footer-brand" href="index.html"><span class="brand-mark">CS</span><span>Commonsense <strong>AI</strong></span></a>
-    <p>Helping Australian businesses make clearer technology choices.</p>
+    <p class="footer-tagline">Human judgement. AI capability.</p>
     <p>© <span id="year"></span> Commonsense AI</p>
   </footer>
 
