@@ -517,3 +517,6 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 .brand-ai { font-size: 19px; padding: 9px 19px; letter-spacing: .1em; }
 .footer-brand .brand-ai { font-size: 14px; padding: 7px 14px; }
 @media (max-width: 560px) { .brand-ai { font-size: 15px; padding: 7px 14px; } }
+
+.start-button { font-size: 22px; padding: 22px 40px; gap: 26px; }
+@media (max-width: 560px) { .start-button { font-size: 19px; padding: 18px 30px; width: 100%; } }
