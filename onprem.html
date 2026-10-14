@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="What an on-premise LLM is, six popular free models, what hardware you need in plain English, and whether running AI in your own office makes sense for a team of ten.">
+  <link rel="canonical" href="https://ai.commonsense.com.au/onprem.html">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#10231f">
+  <title>On-premise LLM: free AI in your own office — Commonsense AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Commonsense AI home">
+      <img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165">
+      <span class="brand-ai">AI</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="toolkit.html">Toolkit</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="onprem.html" aria-current="page">On-premise LLM</a>
+      <a href="https://trainings.kesslernity.com/courses/ai-quickstart" target="_blank" rel="noopener noreferrer">Training ↗</a>
+      <a href="prompts.html">Prompts</a>
+      <a href="downloads.html">Downloads</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+  </header>
+
+    <main id="top">
+    <section class="portal-tools ops-intro" aria-labelledby="ops-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> On-premise LLM</p>
+          <h1 id="ops-title">Run AI in your own office.</h1>
+        </div>
+        <p>Free, open-source AI that runs on a computer you own, in your own building. No monthly fee per person, and your documents never leave the room.</p>
+      </div>
+      <div class="ops-what">
+        <div class="ops-what-copy">
+          <h2>What it is</h2>
+          <p>An LLM, or large language model, is the engine behind ChatGPT, Claude and Copilot. Most are rented from the cloud. Some are published for anyone to download and run for free. These are called open-weight or open-source models.</p>
+          <p>&ldquo;On-premise&rdquo; means you run one of them on a computer in your own office. Staff open a chat page in their web browser, much like ChatGPT, but the thinking happens on that one machine.</p>
+        </div>
+        <ul class="ops-why">
+          <li><strong>Your data stays put</strong><span>Contracts, client files and staff records are never sent to anyone else&rsquo;s servers. For many businesses this is the real reason to do it.</span></li>
+          <li><strong>No per-person fee</strong><span>The software and models are free. You pay for the computer and the power, not for each user.</span></li>
+          <li><strong>Works without the internet</strong><span>It keeps working if the connection drops, and it is never subject to a provider&rsquo;s price rise.</span></li>
+        </ul>
+      </div>
+      <p class="ops-honest"><strong>The honest catch:</strong> the free models you can run on an office PC are good, but not as clever as the biggest paid ones. Think of a very capable graduate, not your best senior specialist.</p>
+    </section>
+
+    <section class="ops-models" aria-labelledby="models-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> Six popular free models</p>
+          <h2 id="models-title">Free to download. Free to use.</h2>
+        </div>
+        <p>These are six of the best-known open models that an office could realistically run. Model names change every few months, but the sizes and what they need stay much the same.</p>
+      </div>
+      <div class="model-grid">
+        <article class="model-card">
+          <div class="model-top"><span class="model-cost">A$0 to download</span><span class="model-by">Alibaba</span></div>
+          <h3>Qwen 3.8 (27B)</h3>
+          <p class="model-good">The best all-rounder for one good office PC. Writes, summarises, answers questions about your documents, and can read images.</p>
+          <dl>
+            <div><dt>Needs</dt><dd>A graphics card with about 18 GB of video memory</dd></div>
+            <div><dt>Licence</dt><dd>Apache 2.0, free for business use</dd></div>
+          </dl>
+        </article>
+        <article class="model-card">
+          <div class="model-top"><span class="model-cost">A$0 to download</span><span class="model-by">Google</span></div>
+          <h3>Gemma 4 (26B and 31B)</h3>
+          <p class="model-good">Quick and capable for everyday work, and it understands pictures and screenshots as well as text.</p>
+          <dl>
+            <div><dt>Needs</dt><dd>About 18 to 19 GB of video memory (a 12B version fits in 8 GB)</dd></div>
+            <div><dt>Licence</dt><dd>Apache 2.0, free for business use</dd></div>
+          </dl>
+        </article>
+        <article class="model-card">
+          <div class="model-top"><span class="model-cost">A$0 to download</span><span class="model-by">OpenAI</span></div>
+          <h3>gpt-oss 20B</h3>
+          <p class="model-good">OpenAI&rsquo;s free model. Very fast on modest hardware and good at step-by-step reasoning and using tools.</p>
+          <dl>
+            <div><dt>Needs</dt><dd>About 14 GB of video memory</dd></div>
+            <div><dt>Licence</dt><dd>Apache 2.0, free for business use</dd></div>
+          </dl>
+        </article>
+        <article class="model-card">
+          <div class="model-top"><span class="model-cost">A$0 to download</span><span class="model-by">Mistral AI, France</span></div>
+          <h3>Mistral Small (24B)</h3>
+          <p class="model-good">Well suited to office assistants. Reliable at producing tidy, structured answers such as tables and forms.</p>
+          <dl>
+            <div><dt>Needs</dt><dd>About 14 GB of video memory</dd></div>
+            <div><dt>Licence</dt><dd>Free to use; check the licence terms for your version</dd></div>
+          </dl>
+        </article>
+        <article class="model-card">
+          <div class="model-top"><span class="model-cost">A$0 to download</span><span class="model-by">DeepSeek</span></div>
+          <h3>DeepSeek-R1 (32B version)</h3>
+          <p class="model-good">Thinks through a problem before it answers. Good for maths and logic, but noticeably slower because of the extra thinking.</p>
+          <dl>
+            <div><dt>Needs</dt><dd>About 19 GB of video memory</dd></div>
+            <div><dt>Licence</dt><dd>MIT, free for business use</dd></div>
+          </dl>
+        </article>
+        <article class="model-card">
+          <div class="model-top"><span class="model-cost">A$0 to download</span><span class="model-by">Meta</span></div>
+          <h3>Llama 3.3 (70B)</h3>
+          <p class="model-good">A big, well-known model. Too heavy for a normal office PC, and sluggish to use even on strong hardware.</p>
+          <dl>
+            <div><dt>Needs</dt><dd>About 42 to 46 GB of video memory, which means a bigger machine</dd></div>
+            <div><dt>Licence</dt><dd>Llama community licence, free for businesses of almost any size</dd></div>
+          </dl>
+        </article>
+      </div>
+      <div class="ops-cost-band">
+        <h3>So what does it actually cost?</h3>
+        <p>The models cost nothing. The software to run them (Ollama and Open WebUI) is free too. Your real costs are three things: <strong>the computer</strong>, <strong>the electricity</strong> (roughly A$25 to A$40 a month for a machine that is on all day and busy part of it) and <strong>someone&rsquo;s time</strong> to set it up and look after it.</p>
+        <p class="ops-note">Some organisations have a policy against models made in certain countries. That applies to Qwen and DeepSeek. Because they run in your office, your data does not go to their makers, but check your own policy before you choose.</p>
+      </div>
+    </section>
+
+    <section class="ops-need" aria-labelledby="need-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> What you need to run them</p>
+          <h2 id="need-title">One thing matters most: the graphics card.</h2>
+        </div>
+        <p>Forget processor speeds and spec sheets. What decides which AI you can run is the video memory on the graphics card. More memory lets you run a bigger, cleverer model.</p>
+      </div>
+      <div class="tier-grid">
+        <article class="tier-card">
+          <span class="tier-tag">Starter</span>
+          <h3>A normal PC from the last two or three years</h3>
+          <p class="tier-gpu">With a graphics card like a GeForce RTX 3060 (12 GB) or RTX 4070.</p>
+          <ul>
+            <li>Runs the smaller models comfortably</li>
+            <li>Fine for one to three people drafting, summarising and asking questions</li>
+            <li>A good, cheap way to trial the idea</li>
+          </ul>
+          <p class="tier-cost"><strong>Cost:</strong> nothing if you already own a suitable PC. Otherwise about A$2,500 to A$3,500 for a new one.</p>
+        </article>
+        <article class="tier-card tier-feature">
+          <span class="tier-tag">The office sweet spot</span>
+          <h3>A strong PC with the best consumer graphics card</h3>
+          <p class="tier-gpu">Something like a GeForce RTX 4090 (24 GB) or RTX 5090 (32 GB).</p>
+          <ul>
+            <li>Runs the models in the 20 to 35 billion size range</li>
+            <li>Several people can use it at once</li>
+            <li>A single person gets answers faster than they can read them</li>
+          </ul>
+          <p class="tier-cost"><strong>Cost:</strong> the RTX 5090 alone was about A$6,000 in Australia in March 2026. Expect roughly A$8,000 to A$10,000 for the complete machine.</p>
+        </article>
+        <article class="tier-card">
+          <span class="tier-tag">Bigger</span>
+          <h3>A workstation or small server</h3>
+          <p class="tier-gpu">Professional graphics cards with 48 to 96 GB of video memory.</p>
+          <ul>
+            <li>Runs the largest models that fit in an office</li>
+            <li>Closer to the cloud tools, but still not equal</li>
+            <li>Only worth it for heavy, all-day use</li>
+          </ul>
+          <p class="tier-cost"><strong>Cost:</strong> well into five figures. Get a quote before you decide.</p>
+        </article>
+      </div>
+      <p class="ops-also"><strong>Also needed:</strong> plenty of ordinary memory (64 GB or more suits the sweet-spot machine), a fast solid-state drive, good cooling because the machine works hard, and a power-protection unit. Graphics-card and memory prices have been rising in Australia, so check current prices.</p>
+    </section>
+
+    <section class="ops-result" aria-labelledby="result-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> The end result</p>
+          <h2 id="result-title">What your team actually gets.</h2>
+        </div>
+        <p>A private chat page that lives on your office network. Staff open it in their browser, type a question and get an answer, with nothing sent outside the building.</p>
+      </div>
+      <div class="result-cols">
+        <div class="result-good">
+          <h3>Works well for</h3>
+          <ul>
+            <li>Summarising long contracts, tenders, policies and meeting notes</li>
+            <li>Drafting and tidying emails, letters and reports</li>
+            <li>Answering questions about your own documents once they are loaded in</li>
+            <li>Rewriting, translating and turning notes into tables</li>
+            <li>Helping with scripts and spreadsheet formulas</li>
+          </ul>
+        </div>
+        <div class="result-less">
+          <h3>Does less well at</h3>
+          <ul>
+            <li>Hard analysis and tricky, multi-step problems compared with the best paid tools</li>
+            <li>Building applications from scratch</li>
+            <li>Anything that needs today&rsquo;s news or the live web</li>
+            <li>Working inside Outlook, Teams and SharePoint the way Copilot does</li>
+            <li>Very long documents with several people using it at once</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ops-pull">A typical day: a manager drops a 40-page supplier contract into the chat, asks for the unusual clauses, and has a useful first read within a minute or so. A first read to check, not advice to rely on.</p>
+    </section>
+
+    <section class="ops-ten" aria-labelledby="ten-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> Ten people on one PC</p>
+          <h2 id="ten-title">Is it cheaper? Mostly, no.</h2>
+        </div>
+        <p>It is a common belief that running your own AI saves money. For a team of ten it only just breaks even once you count everything, and it loses to Copilot.</p>
+      </div>
+      <div class="price-table-wrap ops-table">
+        <table class="price-table">
+          <thead><tr><th scope="col">Option for 10 people</th><th scope="col">Per month</th><th scope="col">Over 3 years</th><th scope="col">Good to know</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Copilot add-on to Business Standard</th><td data-label="Per month"><span class="price-big">A$142</span></td><td data-label="Over 3 years"><span class="price-big">A$5,112</span></td><td data-label="Good to know" class="price-note">A$14.20 a person on top of Microsoft 365. Works inside Outlook, Teams and SharePoint.</td></tr>
+            <tr><th scope="row">Claude or ChatGPT business seats</th><td data-label="Per month"><span class="price-big">A$309</span></td><td data-label="Over 3 years"><span class="price-big">A$11,128</span></td><td data-label="Good to know" class="price-note">About A$30.91 a person. The cleverest models, nothing to look after.</td></tr>
+            <tr class="ops-row-hl"><th scope="row">Your own PC in the office</th><td data-label="Per month"><span class="price-big">A$35</span><small>power only</small></td><td data-label="Over 3 years"><span class="price-big">A$10,260</span><small>machine A$9,000 plus power</small></td><td data-label="Good to know" class="price-note">Add someone&rsquo;s time: two hours a month at A$150 an hour is another A$10,800 over three years.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ten-cols">
+        <div>
+          <h3>Can one PC really serve ten people?</h3>
+          <p>Yes, for everyday use. Ten staff are rarely all asking at the same moment. Usually two to four are waiting on an answer at once. The free tool most people start with (Ollama) copes with about five at once. Past that you need a more capable setup, and it queues the rest.</p>
+          <p>The limit is memory. Every person working on a long document takes a slice of the card&rsquo;s memory. On a 32 GB card, several people summarising big files at once will slow everyone down.</p>
+        </div>
+        <div class="ten-verdict">
+          <h3>The verdict</h3>
+          <p><strong>Possible, but it is not a money-saver at this size.</strong> The figures above assume a A$9,000 machine, A$0.30 a unit for power and A$150 an hour for IT time. Change them and the answer moves, but not by much for ten people.</p>
+          <p>The strong reason to do this is <strong>privacy and control</strong>, not cost. Cost only starts to favour your own machine with many more users, or heavy daily use that would run into usage limits on the paid tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ops-fit" aria-labelledby="fit-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow light"><span></span> Is it viable for my company?</p>
+          <h2 id="fit-title">A simple way to decide.</h2>
+        </div>
+        <p>Run through these. If most of the left column sounds like you, it is worth a trial.</p>
+      </div>
+      <div class="fit-cols">
+        <div class="fit-yes">
+          <h3>Probably a good fit if</h3>
+          <ul>
+            <li>Client or patient information must not leave your premises</li>
+            <li>You are in law, health, finance or government work with strict rules</li>
+            <li>You have someone in-house or on contract who can look after it</li>
+            <li>Your staff mainly summarise, draft and look things up in documents</li>
+            <li>You want a fixed cost that does not climb with each new user</li>
+          </ul>
+        </div>
+        <div class="fit-no">
+          <h3>Probably not if</h3>
+          <ul>
+            <li>You already use Microsoft 365 and want AI inside Outlook and Teams</li>
+            <li>Your people need the most capable AI for hard analysis or coding</li>
+            <li>Nobody has time to keep it patched, backed up and running</li>
+            <li>You mainly want to save money on a team of ten or fewer</li>
+            <li>You need current news or live web answers</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fit-try">
+        <h3>Try it before you buy anything</h3>
+        <ol>
+          <li><strong>Borrow a PC</strong> with a 12 GB or bigger graphics card, or use one you already own.</li>
+          <li><strong>Install the free tools</strong> (Ollama and Open WebUI) and load one of the models above.</li>
+          <li><strong>Give it to three people for two weeks</strong> on real work, then ask whether they would miss it.</li>
+        </ol>
+        <div class="fit-links">
+          <a class="primary-button" href="matchmaker.html">Find my AI match <span aria-hidden="true">→</span></a>
+          <a class="secondary-button" href="pricing.html">Compare cloud prices</a>
+        </div>
+      </div>
+      <p class="ops-sources">Prices and figures are rough guides as at October 2026, in Australian dollars and ex GST, and will change. Model sizes and speeds come from public tests on RTX 4090-class cards: see the <a class="inline-link" href="https://computingforgeeks.com/ollama-models-cheat-sheet/" target="_blank" rel="noopener noreferrer">Ollama models cheat sheet</a>, <a class="inline-link" href="https://localllm.in/blog/ollama-vram-requirements-for-local-llms" target="_blank" rel="noopener noreferrer">VRAM guide</a> and <a class="inline-link" href="https://www.spheron.network/blog/ollama-vs-vllm/" target="_blank" rel="noopener noreferrer">Ollama vs vLLM comparison</a>. The RTX 5090 price comes from a <a class="inline-link" href="https://glukhov.org/hardware/gpu/nvidia-rtx-5080-rtx-5090-prices-march-2026/" target="_blank" rel="noopener noreferrer">March 2026 Australian price review</a>. Machine prices, power costs and IT time are our own assumptions.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="index.html"><img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165"><span class="brand-ai">AI</span></a>
+    <p class="footer-tagline">Human judgement. AI capability.</p>
+    <p>© <span id="year"></span> Commonsense AI · <a class="footer-link" href="toolkit.html">Toolkit</a> · <a class="footer-link" href="pricing.html">Pricing</a> · <a class="footer-link" href="privacy.html">Privacy</a></p>
+  </footer>
+</body>
+</html>
