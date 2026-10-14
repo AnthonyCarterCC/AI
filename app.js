@@ -56,22 +56,22 @@ const products = {
   }
 };
 
+let firstRender = true;
 const state = { current: 0, answers: {} };
 const $ = (selector) => document.querySelector(selector);
-const intro = $("#intro");
 const survey = $("#survey");
 const results = $("#results");
 const ratingGrid = $("#rating-grid");
 
-function showOnly(section) {
-  [intro, survey, results].forEach(item => { item.hidden = item !== section; });
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function showOnly(section, scroll = true) {
+  [survey, results].forEach(item => { item.hidden = item !== section; });
+  if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function beginSurvey() {
+function beginSurvey(scroll = true) {
   state.current = 0;
   state.answers = {};
-  showOnly(survey);
+  showOnly(survey, scroll === true);
   updateLiveChart();
   renderQuestion();
 }
@@ -137,7 +137,8 @@ function renderQuestion() {
     ratingGrid.appendChild(button);
   }
   $("#next-button").disabled = !state.answers[question.key];
-  $("#survey-title").focus({ preventScroll: true });
+  if (!firstRender) $("#survey-title").focus({ preventScroll: true });
+  firstRender = false;
 }
 
 function selectRating(value) {
@@ -213,9 +214,8 @@ function copyResult() {
   });
 }
 
-$("#start-button").addEventListener("click", beginSurvey);
-$("#restart-button").addEventListener("click", beginSurvey);
-$("#retake-button").addEventListener("click", beginSurvey);
+$("#restart-button").addEventListener("click", () => beginSurvey());
+$("#retake-button").addEventListener("click", () => beginSurvey());
 $("#next-button").addEventListener("click", nextQuestion);
 $("#back-button").addEventListener("click", () => { if (state.current > 0) { state.current -= 1; renderQuestion(); } });
 $("#copy-button").addEventListener("click", copyResult);
@@ -228,6 +228,7 @@ document.addEventListener("keydown", event => {
 
 const methodDialog = $("#method-dialog");
 buildLiveChart();
+beginSurvey(false);
 document.querySelectorAll("[data-open-method]").forEach(button => button.addEventListener("click", () => methodDialog.showModal()));
 document.querySelectorAll("[data-close-method]").forEach(button => button.addEventListener("click", () => methodDialog.close()));
 methodDialog.addEventListener("click", event => { if (event.target === methodDialog) methodDialog.close(); });
