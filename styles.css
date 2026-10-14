@@ -508,3 +508,4 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
   .tr-row, .tr-row.tr-paid { grid-template-columns: 1fr; padding: 18px 20px; }
   .tr-own { padding: 20px; }
 }
+.tr-cost small { display: block; margin-top: 4px; color: var(--ink-soft); font-family: "DM Sans", sans-serif; font-size: 12px; letter-spacing: 0; }
