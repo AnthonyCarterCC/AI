@@ -333,7 +333,7 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 .nav-open .nav-toggle span { background: transparent; }
 .nav-open .nav-toggle span::before { top: 0; transform: rotate(45deg); }
 .nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
-@media (max-width: 1099px) {
+@media (max-width: 1399px) {
   .nav-toggle { display: block; }
   .site-nav { display: none; position: absolute; z-index: 30; top: 100%; left: 0; right: 0; margin: 0; padding: 18px 20px 22px; flex-direction: column; align-items: stretch; gap: 4px; background: var(--paper); border: 1px solid var(--line); border-radius: 0 0 18px 18px; box-shadow: var(--shadow); }
   .nav-open .site-nav { display: flex; }
@@ -366,7 +366,7 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 }
 @media (max-width: 999px) { .principles-head .eyebrow { margin-bottom: 14px; } }
 
-@media (max-width: 1099px) { .nav-toggle { margin-left: auto; } }
+@media (max-width: 1399px) { .nav-toggle { margin-left: auto; } }
 
 /* Larger menu, aligned principles heading, no divider line under hero */
 .site-header { height: 96px; }
@@ -379,7 +379,7 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
   .principles-head { align-items: start; }
   .principles-head .eyebrow { margin: 8px 0 0; }
 }
-@media (max-width: 1099px) {
+@media (max-width: 1399px) {
   .site-nav > a, .site-nav > .method-link { font-size: 18px; }
 }
 @media (max-width: 560px) { .site-header { height: 76px; } .brand-logo { height: 36px; } }
@@ -640,3 +640,10 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .principle-grid p { color: var(--ink-soft); }
 .principles .inline-link { color: var(--ink); }
 .survey-shell { padding-top: 32px; }
+
+/* Header call-to-action buttons */
+.site-nav .hdr-cta { padding: 9px 15px; border-radius: 999px; line-height: 1.15; font-size: 12.5px; font-weight: 700; text-align: center; border: 1.5px solid var(--ink); white-space: normal; }
+.site-nav .nav-guide { background: transparent; color: var(--ink); }
+.site-nav .nav-book { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.site-nav .hdr-cta:hover { opacity: 1; transform: translateY(-1px); }
+@media (min-width: 1400px) { .site-nav .hdr-cta { max-width: 250px; } .site-nav { gap: 18px; } }

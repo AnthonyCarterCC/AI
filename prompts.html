@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ready-to-use AI prompt packs for everyday business tasks, coming soon from Commonsense AI.">
+  <meta name="description" content="Expert AI prompts by category and by industry, with full source credits. Fill in a short form, copy the prompt, and open it in Copilot, ChatGPT or Claude.">
   <link rel="canonical" href="https://ai.commonsense.com.au/prompts.html">
   <link rel="icon" href="assets/favicon-64.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="prompts.css">
   <script src="portal.js" defer></script>
 </head>
 <body>
@@ -22,6 +23,8 @@
       <span class="brand-ai">AI</span>
     </a>
     <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="hdr-cta nav-guide" href="assets/Which-AI-should-your-business-use.pdf" download>Download our free guide to AI</a>
+      <a class="hdr-cta nav-book" href="https://bookings.cloud.microsoft/bookwithme/user/3d1ee960caf04d3390cefdb40bc5f166@Commonsense.com.au/meetingtype/w-JzdmNtek-JqbTxssXAYw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Book a 30-minute Teams meeting with our specialists</a>
       <a href="pricing.html">AI pricing</a>
       <a href="toolkit.html">Toolkit</a>
       <a href="training.html">Training</a>
@@ -32,31 +35,229 @@
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
   </header>
 
-  <main id="top">
-    <section class="portal-tools soon-page" aria-labelledby="soon-title">
-      <div class="portal-heading">
-        <div>
-          <p class="eyebrow"><span></span> Prompt library</p>
-          <h1 id="soon-title">Prompts that work.</h1>
-        </div>
-        <p>Ready-to-use prompt packs for everyday business tasks, with examples and clear instructions. We are testing them before we publish.</p>
+  <main id="lib" class="pl">
+  <section class="pl-hero">
+    <div><div class="eyebrow">Prompt library</div><h1>Prompts that work.</h1></div>
+    <p>Expert prompts from respected open libraries, expert Australian prompts written by Commonsense for aged care, property and retail, and quick everyday prompts. Answer a few questions, copy the result, or open it in Copilot, ChatGPT or Claude. Every source is credited.</p>
+  </section>
+
+  <div class="toprow">
+    <div class="seg" role="tablist" aria-label="How do you want to browse?">
+      <button role="tab" id="tab-cat" aria-selected="true" aria-controls="p-cat">By category</button>
+      <button role="tab" id="tab-ind" aria-selected="false" aria-controls="p-ind">By industry</button>
+    </div>
+    <div class="typebox"><span>Show</span>
+      <div class="seg mini" id="seg-type" role="group" aria-label="Prompt type">
+        <button data-type="all" aria-pressed="true">All</button>
+        <button data-type="exp" aria-pressed="false" title="In-depth prompts from open-source libraries">Expert</button>
+        <button data-type="own" aria-pressed="false" title="Short, quick prompts written by Commonsense">Quick</button>
       </div>
-      <div class="soon-card">
-        <span class="status-soon">Coming soon</span>
-        <h2>What we are building</h2>
-        <ul><li>Prompt packs for everyday business tasks</li><li>Worked examples you can adapt in minutes</li><li>Plain-English instructions, no jargon</li></ul>
-        <div class="soon-actions">
-          <a class="primary-button" href="matchmaker.html">Choose the right AI product <span aria-hidden="true">→</span></a>
-          <a class="secondary-button" href="toolkit.html">Back to the toolkit</a>
-        </div>
+    </div>
+  </div>
+
+  <section id="p-cat" role="tabpanel" aria-labelledby="tab-cat">
+    <p class="panel-intro">Start with the kind of task: email, meetings, marketing, spreadsheets and more.</p>
+    <div class="tools"><div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0b3a49" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q-cat" type="search" placeholder="Search all prompts" aria-label="Search prompts"></div></div>
+    <div class="chips" id="chips-cat" role="group" aria-label="Categories"></div>
+    <p class="count" id="count-cat" aria-live="polite" style="margin-top:18px"></p>
+    <div class="grid" id="grid-cat"></div>
+  </section>
+
+  <section id="p-ind" role="tabpanel" aria-labelledby="tab-ind" hidden>
+    <p class="panel-intro">Start with where you work, then choose your role. Industry prompts include the safeguards and Australian context for that sector.</p>
+    <div class="crumbs" id="crumbs"></div>
+    <div class="chips" id="chips-role" role="group" aria-label="Roles" style="margin-bottom:18px"></div>
+    <p class="count" id="count-ind" aria-live="polite"></p>
+    <div class="grid" id="grid-ind"></div>
+  </section>
+
+  <div class="safe"><span aria-hidden="true">🔒</span><div><b>Use AI safely.</b> Never paste passwords, payment card details or anything you would not email to a stranger. Where a prompt is marked <b>High</b>, remove names and identifying details first and have a person check the result before it is used. AI drafts, you decide.</div></div>
+
+  <section id="credits" aria-labelledby="cred-h">
+    <h2 id="cred-h">Credits and licences</h2>
+    <p>Thank you to the people who share their work. Expert prompts from open libraries are used with the wording as published; when you copy one, we add your answers and a short Australian-context note (spelling, law and regulator references). Commonsense Expert prompts for aged care, property and retail, and the Quick prompts, were written by Commonsense Consulting.</p>
+    <div class="credgrid" id="credlist"></div>
+    <details><summary>Licence texts</summary><pre id="lic"></pre></details>
+  </section>
+
+  <div class="cta">
+    <div><h2>Want prompts built around your business?</h2><p>We can set up Copilot with your own templates, policies and safeguards.</p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn gold" href="matchmaker.html">Choose the right AI product →</a><a class="btn o" href="https://bookings.cloud.microsoft/bookwithme/user/3d1ee960caf04d3390cefdb40bc5f166@Commonsense.com.au/meetingtype/w-JzdmNtek-JqbTxssXAYw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Book a 30-minute Teams meeting</a></div>
+  </div>
+<dialog id="dlg" aria-labelledby="d-title">
+  <div class="dlg-h"><div><div class="eyebrow" id="d-crumb"></div><h2 id="d-title"></h2></div><button class="x" id="d-x" aria-label="Close">×</button></div>
+  <div class="dlg-b">
+    <div><h4>1. Fill in the details</h4><div id="d-notice"></div><form id="d-form" onsubmit="return false"></form></div>
+    <div><h4>2. Your prompt</h4><div class="out" id="d-out" tabindex="0" aria-live="polite"></div>
+      <div class="acts">
+        <button class="btn gold" id="b-copy">Copy prompt</button>
+        <button class="btn" id="b-reset">Reset</button>
+        <span class="lbl" id="d-lbl">Copies the prompt, then opens it in:</span>
+        <button class="btn sm" data-ai="copilot">Copilot</button><button class="btn sm" data-ai="chatgpt">ChatGPT</button><button class="btn sm" data-ai="claude">Claude</button>
       </div>
-    </section>
-  </main>
+      <div class="credit" id="d-credit"></div>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+</main>
 
   <footer>
     <a class="brand footer-brand" href="index.html"><img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165"><span class="brand-ai">AI</span></a>
     <p class="footer-tagline">Human judgement. AI capability.</p>
     <p>© <span id="year"></span> Commonsense AI · <a class="footer-link" href="toolkit.html">Toolkit</a> · <a class="footer-link" href="pricing.html">AI pricing</a> · <a class="footer-link" href="training.html">Training</a> · <a class="footer-link" href="privacy.html">Privacy</a></p>
   </footer>
+<script src="prompts-data.js"></script>
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)};
+var esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+if(typeof DATA==="undefined"){$("#lib").insertAdjacentHTML("afterbegin",'<div class="fatal"><b>Prompt data not found.</b> Upload <code>prompts-data.js</code> to the same folder as this page.</div>');return}
+var SENS={L:{n:"Low",t:"General business information."},M:{n:"Medium",t:"Contains internal or commercial information. Check what you paste is OK to share."},H:{n:"High",t:"Sensitive or regulated information. Remove names and identifying details first, and have a person review the result before it is used."}};
+var state={mode:"cat",cat:"all",q:"",ind:null,role:null,type:"all",open:null};
+var items=DATA.items,byId={},catName={},indName={},roleName={};
+items.forEach(function(x){byId[x.id]=x});
+DATA.categories.forEach(function(c){catName[c.id]=c.name});
+DATA.industries.forEach(function(d){indName[d.id]=d.name;d.roles.forEach(function(r){roleName[r.id]=r.name})});
+var isExp=function(x){return x.src!=="own"};
+var typeOk=function(x){return state.type==="all"||(state.type==="exp"?isExp(x):!isExp(x))};
+
+function compose(x,vals){
+  var t=x.b,i,f,v;
+  if(x.m==="tok"){
+    for(i=0;i<x.f.length;i++){f=x.f[i];v=(vals[i]||"").trim()||f.fb||("["+f.l+" - paste here]");t=t.split(f.k).join(v)}
+  }else{
+    var lines=[];for(i=0;i<x.f.length;i++){v=(vals[i]||"").trim();if(v)lines.push("- "+x.f[i].l+": "+v)}
+    t+="\n\n<user_inputs>\n"+(lines.length?lines.join("\n"):"(none provided yet - ask me for the required inputs)")+"\n</user_inputs>";
+  }
+  if(x.a)t+="\n\n<australian_context>\n"+x.a+"\n</australian_context>";
+  return t;
+}
+function card(x,showRole){
+  var lic=isExp(x)?DATA.sources[x.src].licence.split(" ")[0]:"";var by=isExp(x)?'<div class="by">By '+esc(x.au)+(lic?' \u00b7 '+esc(lic):' \u00b7 Australian')+'</div>':'';
+  var tag=isExp(x)?'<span class="tag exp">Expert</span>':'<span class="tag own">Quick</span>';
+  var rl=showRole?'<span class="tag role">'+esc(x.kind==="ind"?(roleName[x.r]||""):catName[x.g])+'</span>':'';
+  return '<button class="card" data-id="'+esc(x.id)+'"><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p>'+by+'<div class="meta">'+tag+'<span class="tag '+x.s+'">'+SENS[x.s].n+'</span>'+rl+'<span class="go">Use \u2192</span></div></button>';
+}
+function renderCat(){
+  var q=state.q.toLowerCase().trim();
+  var base=items.filter(function(x){return x.kind==="cat"&&typeOk(x)});
+  var list=base.filter(function(x){return(q||state.cat==="all"||x.g===state.cat)&&(!q||(x.t+" "+x.d+" "+catName[x.g]).toLowerCase().indexOf(q)>-1)});
+  var h='<button class="chip" aria-pressed="'+(state.cat==="all"&&!q)+'" data-cat="all">All<i>'+base.length+'</i></button>';
+  DATA.categories.forEach(function(c){var n=base.filter(function(x){return x.g===c.id}).length;h+='<button class="chip" aria-pressed="'+(state.cat===c.id&&!q)+'" data-cat="'+c.id+'">'+c.icon+' '+esc(c.name)+'<i>'+n+'</i></button>'});
+  $("#chips-cat").innerHTML=h;
+  var cur=DATA.categories.filter(function(c){return c.id===state.cat})[0];
+  $("#count-cat").textContent=q?list.length+" result"+(list.length===1?"":"s")+" for \u201c"+state.q.trim()+"\u201d across all categories":(cur?cur.name+": "+cur.tagline+". ":"")+list.length+" prompt"+(list.length===1?"":"s");
+  $("#grid-cat").innerHTML=list.length?list.map(function(x){return card(x,state.cat==="all"||!!q)}).join(""):'<div class="empty">No prompts match. Try a different word, switch the Expert / Quick filter, or pick a category.</div>';
+}
+function renderInd(){
+  var crumbs=$("#crumbs"),chips=$("#chips-role"),grid=$("#grid-ind"),count=$("#count-ind");
+  var d=DATA.industries.filter(function(x){return x.id===state.ind})[0];
+  if(!d){
+    crumbs.innerHTML="<span>Choose your industry</span>";chips.innerHTML="";count.textContent="";
+    grid.innerHTML=DATA.industries.map(function(x){var n=items.filter(function(i){return i.kind==="ind"&&i.g===x.id&&typeOk(i)}).length;
+      return '<button class="card" data-ind="'+x.id+'"><span class="ico" aria-hidden="true">'+x.icon+'</span><h3>'+esc(x.name)+'</h3><p>'+esc(x.tagline)+'</p><div class="meta"><span class="tag role">'+x.roles.length+' roles</span><span class="tag role">'+n+' prompts</span><span class="go">Choose \u2192</span></div></button>'}).join("");
+    return;
+  }
+  var r=d.roles.filter(function(x){return x.id===state.role})[0];
+  crumbs.innerHTML='<button data-back="ind">All industries</button><span>\u203a</span><b>'+esc(d.name)+'</b>'+(r?'<span>\u203a</span><b>'+esc(r.name)+'</b>':'');
+  var base=items.filter(function(x){return x.kind==="ind"&&x.g===d.id&&typeOk(x)});
+  var h='<button class="chip" aria-pressed="'+(!r)+'" data-role="all">All roles<i>'+base.length+'</i></button>';
+  d.roles.forEach(function(x){h+='<button class="chip" aria-pressed="'+(state.role===x.id)+'" data-role="'+x.id+'">'+esc(x.name)+'<i>'+base.filter(function(i){return i.r===x.id}).length+'</i></button>'});
+  chips.innerHTML=h;
+  var list=base.filter(function(x){return!r||x.r===r.id});
+  count.textContent=(r?"":"Choose a role to narrow down, or browse everything for "+d.name+". ")+list.length+" prompt"+(list.length===1?"":"s");
+  grid.innerHTML=list.length?list.map(function(x){return card(x,!r)}).join(""):'<div class="empty">No prompts of that type for this role. Switch the Expert / Quick filter.</div>';
+}
+function render(){(state.mode==="cat"?renderCat:renderInd)()}
+function setMode(m,noHash){
+  state.mode=m;
+  $("#tab-cat").setAttribute("aria-selected",m==="cat");$("#tab-ind").setAttribute("aria-selected",m==="ind");
+  $("#p-cat").hidden=m!=="cat";$("#p-ind").hidden=m!=="ind";
+  render();if(!noHash)writeHash();
+}
+function writeHash(){
+  var h=state.mode==="cat"?(state.cat==="all"?"category":"category/"+state.cat):(state.ind?"industry/"+state.ind+(state.role?"/"+state.role:""):"industry");
+  if(state.type!=="all")h+=(h.indexOf("?")>-1?"&":"?")+"type="+state.type;
+  if(state.open)h+=(h.indexOf("?")>-1?"&":"?")+"p="+state.open;
+  history.replaceState(null,"","#"+h);
+}
+function readHash(){
+  var h=location.hash.replace(/^#/,""),p=null,m=h.match(/[?&]p=([\w-]+)/),t=h.match(/[?&]type=(exp|own)/);
+  if(m)p=m[1];state.type=t?t[1]:"all";
+  h=h.replace(/\?.*$/,"");var s=h.split("/");
+  if(s[0]==="industry"){state.mode="ind";state.ind=s[1]||null;state.role=s[2]||null}else{state.mode="cat";state.cat=s[1]||"all"}
+  syncType();setMode(state.mode,true);
+  if(p&&byId[p])openItem(p,true);
+}
+function syncType(){document.querySelectorAll("#seg-type button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-type")===state.type)})}
+var dlg=$("#dlg"),cur=null,vals=[];
+function openItem(id,noHash){
+  cur=byId[id];if(!cur)return;vals=[];state.open=id;
+  var crumb=cur.kind==="ind"?indName[cur.g]+" \u00b7 "+roleName[cur.r]:catName[cur.g];
+  $("#d-crumb").textContent=crumb;$("#d-title").textContent=cur.t;
+  var n='<div class="notice '+cur.s+'"><b>'+SENS[cur.s].n+' sensitivity.</b> '+esc(SENS[cur.s].t)+'</div>';
+  if(isExp(cur))n+='<div class="notice"><b>Expert prompt.</b> This is a detailed, structured prompt. Fill in what you can; the AI will ask for anything critical that is missing.</div>';
+  $("#d-notice").innerHTML=n;
+  $("#d-form").innerHTML=cur.f.map(function(f,i){return '<label for="f'+i+'">'+esc(f.l)+'</label><textarea id="f'+i+'" data-i="'+i+'" placeholder="'+esc(f.h||"Paste or type here")+'"></textarea>'}).join("");
+  var cr;
+  if(cur.src==="csx"){cr='Written by Commonsense Consulting for Australian aged care, property and retail. A draft to review, not clinical, legal or financial advice.'}
+  else if(isExp(cur)){var s=DATA.sources[cur.src];cr='Source: <a href="'+esc(cur.u)+'" target="_blank" rel="noopener noreferrer">'+esc(s.name)+'</a> by '+esc(cur.au)+'. Licence: <a href="'+esc(s.licenceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(s.licence)+'</a>. Wording is as published; the Australian-context note is added by us.'}
+  else cr='Written by Commonsense Consulting.';
+  $("#d-credit").innerHTML=cr;
+  refresh();if(!dlg.open)dlg.showModal();$("#d-form").parentNode.scrollTop=0;
+  if(!noHash)writeHash();
+}
+function refresh(){$("#d-out").innerHTML=esc(compose(cur,vals)).replace(/\[([^\]\n]+? - paste here)\]/g,"<mark>[$1]</mark>")}
+function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove("on")},2800)}
+function copy(){
+  var txt=compose(cur,vals);
+  function fb(){var a=document.createElement("textarea");a.value=txt;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();var ok=false;try{ok=document.execCommand("copy")}catch(e){}document.body.removeChild(a);return ok}
+  if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(txt).then(function(){return true},fb);
+  return Promise.resolve(fb());
+}
+var URLS={copilot:"https://copilot.microsoft.com/?q=",chatgpt:"https://chatgpt.com/?q=",claude:"https://claude.ai/new?q="};
+$("#d-form").addEventListener("input",function(e){var i=e.target.getAttribute("data-i");if(i!==null){vals[+i]=e.target.value;refresh()}});
+$("#b-copy").addEventListener("click",function(){copy().then(function(ok){toast(ok?"Prompt copied":"Copy failed. Select the text and copy it manually.")})});
+$("#b-reset").addEventListener("click",function(){vals=[];document.querySelectorAll("#d-form textarea").forEach(function(a){a.value=""});refresh()});
+document.querySelectorAll("[data-ai]").forEach(function(b){b.addEventListener("click",function(){
+  var k=b.getAttribute("data-ai"),url=URLS[k]+encodeURIComponent(compose(cur,vals)),win=window.open("about:blank","_blank");
+  copy().then(function(){
+    if(url.length>7000){if(win)win.location.href=URLS[k].replace(/\?q=$/,"");toast("Prompt copied. Paste it into the chat (it is too long to pre-fill).")}
+    else{if(win)win.location.href=url;toast("Prompt copied and opened")}
+  });
+})});
+$("#d-x").addEventListener("click",function(){dlg.close()});
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+dlg.addEventListener("close",function(){state.open=null;writeHash()});
+document.addEventListener("click",function(e){
+  var c=e.target.closest("[data-id],[data-cat],[data-ind],[data-role],[data-back],[data-type]");if(!c)return;
+  if(c.hasAttribute("data-id"))return openItem(c.getAttribute("data-id"));
+  if(c.hasAttribute("data-type")){state.type=c.getAttribute("data-type");syncType();render();writeHash()}
+  else if(c.hasAttribute("data-cat")){state.cat=c.getAttribute("data-cat");state.q="";$("#q-cat").value="";renderCat();writeHash()}
+  else if(c.hasAttribute("data-ind")){state.ind=c.getAttribute("data-ind");state.role=null;renderInd();writeHash();$("#p-ind").scrollIntoView({block:"start"})}
+  else if(c.hasAttribute("data-role")){var r=c.getAttribute("data-role");state.role=r==="all"?null:r;renderInd();writeHash()}
+  else if(c.hasAttribute("data-back")){state.ind=null;state.role=null;renderInd();writeHash()}
+});
+$("#q-cat").addEventListener("input",function(e){state.q=e.target.value;renderCat()});
+$("#tab-cat").addEventListener("click",function(){setMode("cat")});
+$("#tab-ind").addEventListener("click",function(){setMode("ind")});
+[$("#tab-cat"),$("#tab-ind")].forEach(function(b){b.addEventListener("keydown",function(e){if(e.key==="ArrowRight"||e.key==="ArrowLeft"){setMode(state.mode==="cat"?"ind":"cat");$("#tab-"+state.mode).focus()}})});
+window.addEventListener("hashchange",function(){if(!dlg.open)readHash()});
+/* credits */
+var cl="",lic="";
+Object.keys(DATA.sources).forEach(function(k){var s=DATA.sources[k],n=items.filter(function(x){return x.src===k}).length;if(!n)return;
+  if(!s.url){cl+='<div class="cred"><b>'+esc(s.name)+'</b>By '+esc(s.author)+'<br>'+n+' prompt'+(n===1?"":"s")+' \u00b7 Aged care, property and retail</div>';return}
+  cl+='<div class="cred"><b><a href="'+esc(s.url)+'" target="_blank" rel="noopener noreferrer">'+esc(s.name)+'</a></b>By '+esc(s.author)+'<br>'+n+' prompt'+(n===1?"":"s")+' \u00b7 <a href="'+esc(s.licenceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(s.licence)+'</a></div>';
+  if(s.notice)lic+=s.name+"\n"+s.notice+"\n\nMIT License\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n\n----------------------------------------\n\n";
+  else lic+=s.name+"\nPrompt content is dedicated to the public domain under CC0 1.0 Universal. No attribution is required; credit is given voluntarily.\n\n----------------------------------------\n\n";
+});
+var own=items.filter(function(x){return x.src==="own"}).length;
+cl+='<div class="cred"><b>Commonsense Consulting</b>Quick prompts written by our team<br>'+own+' prompts</div>';
+$("#credlist").innerHTML=cl;$("#lic").textContent=lic.replace(/\n+-{10,}\n+$/,"");
+readHash();
+})();
+</script>
 </body>
 </html>
