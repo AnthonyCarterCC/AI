@@ -71,6 +71,7 @@
     <div class="grid" id="grid-ind"></div>
   </section>
 
+  <div class="safe"><span aria-hidden="true">📝</span><div><b>These prompts are templates.</b> Please read each one and change it to suit what you want to do. Prompts for aged care, property and retail have not been reviewed by sector experts, and items marked [VERIFY] need checking before you rely on them. You use every prompt at your own risk. They are drafting aids, not clinical, legal, financial or tax advice.</div></div>
   <div class="safe"><span aria-hidden="true">🔒</span><div><b>Use AI safely.</b> Never paste passwords, payment card details or anything you would not email to a stranger. Where a prompt is marked <b>High</b>, remove names and identifying details first and have a person check the result before it is used. AI drafts, you decide.</div></div>
 
   <section id="credits" aria-labelledby="cred-h">
@@ -198,6 +199,8 @@ function openItem(id,noHash){
   var crumb=cur.kind==="ind"?indName[cur.g]+" \u00b7 "+roleName[cur.r]:catName[cur.g];
   $("#d-crumb").textContent=crumb;$("#d-title").textContent=cur.t;
   var n='<div class="notice '+cur.s+'"><b>'+SENS[cur.s].n+' sensitivity.</b> '+esc(SENS[cur.s].t)+'</div>';
+  var vf=JSON.stringify(cur).indexOf("VERIFY")>-1;
+  n+=vf?'<div class="notice H"><b>Check before you use this prompt.</b> This prompt has not been reviewed by an expert in this sector. Items marked [VERIFY] need checking against current rules and your own policies. You use it at your own risk, and it is not clinical, legal, financial or tax advice.</div>':'<div class="notice"><b>This is a template.</b> Read it through and change it to suit what you want to do. You use it at your own risk.</div>';
   if(isExp(cur))n+='<div class="notice"><b>Expert prompt.</b> This is a detailed, structured prompt. Fill in what you can; the AI will ask for anything critical that is missing.</div>';
   $("#d-notice").innerHTML=n;
   $("#d-form").innerHTML=cur.f.map(function(f,i){return '<label for="f'+i+'">'+esc(f.l)+'</label><textarea id="f'+i+'" data-i="'+i+'" placeholder="'+esc(f.h||"Paste or type here")+'"></textarea>'}).join("");
