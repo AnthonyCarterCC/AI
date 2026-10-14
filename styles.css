@@ -399,7 +399,7 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 .model-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .model-card { padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(20,49,40,.06); }
 .model-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 12px; }
-.model-cost { padding: 5px 10px; border-radius: 999px; background: var(--lime); color: var(--ink-deep); font-weight: 800; letter-spacing: .02em; }
+.model-cost { padding: 5px 10px; border-radius: 999px; background: var(--lime); color: var(--ink-deep); font-weight: 800; letter-spacing: 0; font-size: 12px; }
 .model-by { color: var(--ink-soft); font-weight: 600; text-align: right; }
 .model-card h3 { margin: 18px 0 8px; font-family: Manrope, sans-serif; font-size: 22px; letter-spacing: -.03em; }
 .model-good { margin: 0 0 18px; color: var(--ink-soft); line-height: 1.6; font-size: 15px; }
@@ -647,3 +647,8 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .site-nav .nav-book { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 .site-nav .hdr-cta:hover { opacity: 1; transform: translateY(-1px); }
 @media (min-width: 1400px) { .site-nav .hdr-cta { max-width: 250px; } .site-nav { gap: 18px; } }
+
+/* Header buttons match the AI badge: dark ink with gold text, same size */
+.site-nav .hdr-cta, .site-nav .hdr-cta:hover { background: var(--ink); border-color: var(--ink); color: var(--gold); font-family: Manrope, sans-serif; font-weight: 800; letter-spacing: 0; font-size: 12px; }
+.site-nav .hdr-cta { display: flex; align-items: center; justify-content: center; min-height: 50px; padding: 9px 14px; }
+@media (min-width: 1400px) { .site-nav .hdr-cta { width: 215px; } }
