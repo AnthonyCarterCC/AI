@@ -253,3 +253,65 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
   .orbit-tile { position: static; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { .portal-orbit { animation: none !important; } }
+
+/* Pricing */
+.pricing { padding: 100px max(20px, calc((100% - 1180px) / 2)); background: var(--cream); border-top: 1px solid var(--line); }
+.price-table-wrap { margin-top: 44px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); overflow: hidden; box-shadow: var(--shadow); }
+.price-table { width: 100%; border-collapse: collapse; text-align: left; }
+.price-table th, .price-table td { padding: 20px 24px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.price-table thead th { background: var(--ink); color: #fff; font-family: Manrope, sans-serif; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; border-bottom: 0; }
+.price-table tbody tr:last-child th, .price-table tbody tr:last-child td { border-bottom: 0; }
+.price-name { display: inline-flex; align-items: center; gap: 11px; font-family: Manrope, sans-serif; font-size: 16px; }
+.price-name img { flex: none; }
+.price-big { display: block; font-family: Manrope, sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+.price-table small { display: block; margin-top: 4px; color: var(--ink-soft); font-size: 12px; line-height: 1.4; }
+.price-note { color: var(--ink-soft); font-size: 14px; line-height: 1.55; max-width: 330px; }
+.copilot-addon { margin-top: 28px; display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center; padding: 34px 38px; border-radius: var(--radius); background: var(--lime); color: var(--ink-deep); }
+.addon-tag { display: inline-block; padding: 6px 12px; border-radius: 999px; background: var(--ink-deep); color: var(--lime); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.copilot-addon h3 { margin: 14px 0 10px; font-family: Manrope, sans-serif; font-size: 26px; line-height: 1.15; letter-spacing: -.03em; }
+.copilot-addon p { margin: 0; line-height: 1.6; }
+.addon-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.addon-list li { padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.62); display: grid; gap: 3px; }
+.addon-list span { font-size: 13px; font-weight: 700; }
+.addon-list strong { font-family: Manrope, sans-serif; font-size: 26px; letter-spacing: -.03em; }
+.addon-list small { font-size: 12px; line-height: 1.35; }
+.token-panel { margin-top: 28px; padding: 44px 44px 36px; border-radius: var(--radius); background: var(--ink-deep); color: #fff; }
+.token-head { max-width: 700px; }
+.token-head h3 { margin: 6px 0 12px; font-family: Manrope, sans-serif; font-size: clamp(24px, 3vw, 34px); line-height: 1.12; letter-spacing: -.035em; }
+.token-head p:not(.eyebrow) { margin: 0; color: rgba(255,255,255,.78); line-height: 1.65; }
+.token-list { margin: 34px 0 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+.token-row { display: grid; grid-template-columns: 150px 1fr 90px; grid-template-areas: "name track label" ". note note"; gap: 4px 18px; align-items: center; }
+.token-row .price-name { grid-area: name; color: #fff; }
+.token-row .price-name img { background: #fff; border-radius: 8px; padding: 4px; width: 32px; height: 32px; }
+.token-track { grid-area: track; height: 16px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+.token-track span { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--lime), var(--gold)); }
+.token-row:first-child .token-track span { background: linear-gradient(90deg, var(--gold), #e5835a); }
+.token-label { grid-area: label; font-weight: 800; font-size: 13px; color: var(--lime); }
+.token-row p { grid-area: note; margin: 0; color: rgba(255,255,255,.7); font-size: 13px; line-height: 1.5; }
+.token-scale { margin: 22px 0 0 168px; display: flex; justify-content: space-between; max-width: calc(100% - 276px); color: rgba(255,255,255,.5); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.price-foot { margin: 26px 0 0; max-width: 900px; color: var(--ink-soft); font-size: 13px; line-height: 1.65; }
+@media (max-width: 900px) {
+  .copilot-addon { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
+  .token-panel { padding: 30px 22px; }
+  .token-row { grid-template-columns: 1fr 70px; grid-template-areas: "name label" "track track" "note note"; }
+  .token-scale { margin-left: 0; max-width: none; }
+}
+@media (max-width: 720px) {
+  .pricing { padding: 70px 20px; }
+  .price-table thead { display: none; }
+  .price-table, .price-table tbody, .price-table tr, .price-table th, .price-table td { display: block; width: 100%; }
+  .price-table tr { padding: 18px 20px; border-bottom: 1px solid var(--line); }
+  .price-table tbody tr:last-child { border-bottom: 0; }
+  .price-table th, .price-table td { padding: 6px 0; border: 0; }
+  .price-table td[data-label]::before { content: attr(data-label); display: block; color: var(--ink-soft); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .price-note { max-width: none; }
+  .addon-list { grid-template-columns: 1fr; }
+}
+.price-foot .inline-link { color: var(--ink); font-weight: 700; }
+
+/* Brand logo */
+.brand { gap: 12px; }
+.brand-logo { display: block; height: 42px; width: auto; }
+.brand-ai { padding: 5px 11px; border-radius: 999px; background: var(--ink); color: var(--gold); font-family: Manrope, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .14em; line-height: 1; }
+.footer-brand .brand-logo { height: 34px; }
+@media (max-width: 560px) { .brand-logo { height: 34px; } }

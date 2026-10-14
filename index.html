@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Practical AI tools, prompts, downloads and guidance for Australian businesses. Human judgement. AI capability.">
   <link rel="canonical" href="https://ai.commonsense.com.au/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="theme-color" content="#10231f">
   <title>Commonsense AI — Human judgement. AI capability.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +18,8 @@
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Commonsense AI home">
-      <span class="brand-mark" aria-hidden="true">CS</span>
-      <span>Commonsense <strong>AI</strong></span>
+      <img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165">
+      <span class="brand-ai">AI</span>
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       <a href="#tools">Tools</a>
@@ -104,6 +105,111 @@
       </div>
     </section>
 
+    <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> What it costs</p>
+          <h2 id="pricing-title">Know the price before you commit.</h2>
+        </div>
+        <p>Business plan prices in Australian dollars, per user per month. Pick the tool that fits your work, then price it properly.</p>
+      </div>
+
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead><tr><th scope="col">Tool</th><th scope="col">Business seat</th><th scope="col">Premium seat</th><th scope="col">Good to know</th></tr></thead>
+          <tbody>
+          <tr>
+            <th scope="row"><span class="price-name"><img src="assets/logos/copilot.svg" alt="" width="26" height="26"><strong>Copilot</strong></span></th>
+            <td data-label="Business seat"><span class="price-big">A$31.40</span><small>A$26.91 for the first year on orders by 31 Dec 2026</small></td>
+            <td data-label="Premium seat">Not offered</td>
+            <td data-label="Good to know" class="price-note">Standalone add-on. Most Microsoft 365 customers pay far less: see below.</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="price-name"><img src="assets/logos/claude.svg" alt="" width="26" height="26"><strong>Claude</strong></span></th>
+            <td data-label="Business seat"><span class="price-big">A$30.91</span></td>
+            <td data-label="Premium seat"><span class="price-big">A$154.55</span></td>
+            <td data-label="Good to know" class="price-note">Team seat, minimum 2. Heavy users usually need the Premium seat.</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="price-name"><img src="assets/logos/chatgpt.svg" alt="" width="26" height="26"><strong>ChatGPT</strong></span></th>
+            <td data-label="Business seat"><span class="price-big">A$30.91*</span><small>US$20</small></td>
+            <td data-label="Premium seat"><span class="price-big">A$154.55*</span><small>US$100</small></td>
+            <td data-label="Good to know" class="price-note">Business seat, minimum 2.</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="price-name"><img src="assets/logos/gemini.svg" alt="" width="26" height="26"><strong>Gemini</strong></span></th>
+            <td data-label="Business seat"><span class="price-big">A$19.80</span></td>
+            <td data-label="Premium seat"><span class="price-big">A$30.90</span></td>
+            <td data-label="Good to know" class="price-note">Google Workspace Business Standard / Plus. Price covers the whole suite, Gemini included.</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="price-name"><img src="assets/logos/grok.svg" alt="" width="26" height="26"><strong>Grok</strong></span></th>
+            <td data-label="Business seat"><span class="price-big">A$46.37*</span><small>US$30</small></td>
+            <td data-label="Premium seat">Not offered</td>
+            <td data-label="Good to know" class="price-note">Business seat.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="copilot-addon">
+        <div class="addon-intro">
+          <span class="addon-tag">Already on Microsoft 365?</span>
+          <h3>Copilot costs about half as much as a separate AI seat.</h3>
+          <p>If you already run Microsoft 365, you only pay the difference to add Copilot. Moving to the matching &ldquo;with Copilot&rdquo; plan is the cheapest way to get the full product.</p>
+        </div>
+        <ul class="addon-list">
+          <li><span>Business Standard</span><strong>+A$14.20</strong><small>A$35.20 all-in, up from A$21.00</small></li>
+          <li><span>Business Premium</span><strong>+A$15.00</strong><small>A$47.90 all-in, up from A$32.90</small></li>
+          <li><span>Business Basic, or a few users</span><strong>+A$31.40</strong><small>Copilot Business add-on</small></li>
+          <li><span>Microsoft 365 E3 / E5</span><strong>+A$44.90</strong><small>No discounted bundle</small></li>
+        </ul>
+      </div>
+
+      <div class="token-panel">
+        <div class="token-head">
+          <p class="eyebrow light"><span></span> Usage matters too</p>
+          <h3>Some AI uses your allowance up much faster.</h3>
+          <p>AI is measured in tokens, small chunks of text. Heavier tools think longer and use more of them, so the cheapest seat is not always the cheapest tool. Here is how quickly each one tends to use its allowance in everyday business work.</p>
+        </div>
+        <ul class="token-list">
+          <li class="token-row">
+            <span class="price-name"><img src="assets/logos/claude.svg" alt="" width="26" height="26"><strong>Claude</strong></span>
+            <span class="token-track" aria-hidden="true"><span style="width:96%"></span></span>
+            <span class="token-label">Heavy</span>
+            <p>Uses the most tokens for similar work. Plan for heavy users to run out.</p>
+          </li>
+          <li class="token-row">
+            <span class="price-name"><img src="assets/logos/copilot.svg" alt="" width="26" height="26"><strong>Copilot</strong></span>
+            <span class="token-track" aria-hidden="true"><span style="width:52%"></span></span>
+            <span class="token-label">Moderate</span>
+            <p>Includes OpenAI and Claude models, but with limited functionality. Heavier jobs use Copilot Credits, billed on top.</p>
+          </li>
+          <li class="token-row">
+            <span class="price-name"><img src="assets/logos/chatgpt.svg" alt="" width="26" height="26"><strong>ChatGPT</strong></span>
+            <span class="token-track" aria-hidden="true"><span style="width:30%"></span></span>
+            <span class="token-label">Light</span>
+            <p>Generous usage for the price.</p>
+          </li>
+          <li class="token-row">
+            <span class="price-name"><img src="assets/logos/gemini.svg" alt="" width="26" height="26"><strong>Gemini</strong></span>
+            <span class="token-track" aria-hidden="true"><span style="width:28%"></span></span>
+            <span class="token-label">Light</span>
+            <p>Generous usage for the price.</p>
+          </li>
+          <li class="token-row">
+            <span class="price-name"><img src="assets/logos/grok.svg" alt="" width="26" height="26"><strong>Grok</strong></span>
+            <span class="token-track" aria-hidden="true"><span style="width:16%"></span></span>
+            <span class="token-label">Very light</span>
+            <p>Very low token cost. Use it almost endlessly.</p>
+          </li>
+        </ul>
+        <p class="token-scale" aria-hidden="true"><span>Lighter use</span><span>Heavier use</span></p>
+      </div>
+
+      <p class="price-foot">Prices are per user per month, ex GST, on a 12-month commitment, checked October 2026. Month to month costs about 20% more. *ChatGPT and Grok bill in US dollars; Australian dollar figures are converted at about A$1.55 per US$1 and will move with the exchange rate. Usage ratings are our own opinion from day-to-day use, not lab benchmarks, and they will change as the products do. <a class="inline-link" href="matchmaker.html">Not sure which one? Try the AI Matchmaker.</a></p>
+    </section>
+
     <section class="principles" aria-labelledby="principles-title">
       <p class="eyebrow light"><span></span> A Commonsense approach</p>
       <h2 id="principles-title">No hype. Just a better starting point.</h2>
@@ -116,7 +222,7 @@
   </main>
 
   <footer>
-    <a class="brand footer-brand" href="#top"><span class="brand-mark">CS</span><span>Commonsense <strong>AI</strong></span></a>
+    <a class="brand footer-brand" href="#top"><img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165"><span class="brand-ai">AI</span></a>
     <p class="footer-tagline">Human judgement. AI capability.</p>
     <p>© <span id="year"></span> Commonsense AI · <a class="footer-link" href="privacy.html">Privacy</a></p>
   </footer>
