@@ -315,3 +315,13 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 .brand-ai { padding: 5px 11px; border-radius: 999px; background: var(--ink); color: var(--gold); font-family: Manrope, sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .14em; line-height: 1; }
 .footer-brand .brand-logo { height: 34px; }
 @media (max-width: 560px) { .brand-logo { height: 34px; } }
+
+/* Header CTAs */
+.nav-quiz { border: 1px solid var(--ink); border-radius: 999px; padding: 10px 16px; font-size: 12px !important; font-weight: 700 !important; white-space: nowrap; }
+.nav-quiz:hover { background: var(--ink); color: #fff !important; opacity: 1 !important; }
+.site-nav .nav-cta { background: var(--gold); border-color: var(--gold); color: var(--ink-deep) !important; white-space: nowrap; }
+.site-nav .nav-cta .short { display: none; }
+@media (max-width: 1240px) { .site-nav > a:not(.nav-quiz):not(.nav-cta) { display: none; } }
+@media (max-width: 960px) { .site-nav .nav-quiz { display: none; } }
+@media (max-width: 800px) { .site-nav a.nav-cta { display: inline-flex; } }
+@media (max-width: 640px) { .site-nav .nav-cta .long { display: none; } .site-nav .nav-cta .short { display: inline; } }
