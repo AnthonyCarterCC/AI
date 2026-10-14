@@ -30,8 +30,8 @@
   </header>
 
   <main id="top">
-    <section class="hero" id="intro">
-      <div class="hero-copy">
+    <section class="hero portal-hero" id="intro">
+      <div class="hero-copy portal-copy">
         <p class="eyebrow"><span></span> Your practical AI portal</p>
         <h1>Human judgement.<br><em>AI capability.</em></h1>
         <p class="hero-lede">Practical tools, prompts and guides that put AI to work for your people, not the other way round.</p>
@@ -44,11 +44,16 @@
           <span>✓ Plain-English guidance</span>
           <span>✓ No jargon required</span>
         </div>
+        <p class="sr-only">Compare ChatGPT, Claude, Gemini, Copilot and Grok.</p>
       </div>
-      <div class="hero-visual decision-visual">
-        <div class="future-ring" aria-hidden="true"></div>
-        <img src="assets/commonsense-ai-decision-maker.webp" width="1536" height="1024" fetchpriority="high" alt="A business decision-maker comparing ChatGPT, Claude, Gemini, Copilot and Grok">
-      </div>
+      <ul class="portal-orbit" aria-hidden="true">
+        <li class="orbit-path"></li>
+        <li class="orbit-tile" style="--phase:-90deg"><img src="assets/logos/chatgpt.svg" alt="" width="28" height="28"><span>ChatGPT</span></li>
+        <li class="orbit-tile" style="--phase:-18deg"><img src="assets/logos/claude.svg" alt="" width="28" height="28"><span>Claude</span></li>
+        <li class="orbit-tile" style="--phase:54deg"><img src="assets/logos/gemini.svg" alt="" width="28" height="28"><span>Gemini</span></li>
+        <li class="orbit-tile" style="--phase:126deg"><img src="assets/logos/copilot.svg" alt="" width="28" height="28"><span>Copilot</span></li>
+        <li class="orbit-tile" style="--phase:198deg"><img src="assets/logos/grok.svg" alt="" width="28" height="28"><span>Grok</span></li>
+      </ul>
     </section>
 
     <section class="portal-tools" id="tools" aria-labelledby="tools-title">
