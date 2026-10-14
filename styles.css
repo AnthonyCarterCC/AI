@@ -678,3 +678,21 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
   .dl-list .dl-cover strong { font-size: 14px; }
   .dl-list .dl-d .dl-cover strong { font-size: 12.5px; }
 }
+.dl-group { margin: 44px 0 0; font-family: Manrope, sans-serif; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+.dl-group + .dl-list { margin-top: 16px; }
+.dl-guide h3 { margin: 0 0 8px; font-family: Manrope, sans-serif; font-size: 22px; letter-spacing: -.03em; line-height: 1.15; }
+.dl-guide p b { color: var(--ink); }
+.dl-guide p { margin-bottom: 16px; }
+@media (min-width: 1100px) {
+  .dl-list.dl-three { grid-template-columns: repeat(3, 1fr); }
+  .dl-list.dl-three .dl-guide { grid-template-columns: 1fr; align-content: start; gap: 18px; }
+  .dl-list.dl-three .dl-cover { width: 108px; margin: 4px 0 6px 6px; }
+  .dl-list.dl-one { grid-template-columns: 1fr; }
+  .dl-list.dl-one .dl-guide { grid-template-columns: 120px minmax(0, 1fr); }
+}
+@media (min-width: 1100px) {
+  .dl-list.dl-three .dl-guide { grid-template-rows: auto 1fr; }
+  .dl-list.dl-three .dl-guide > div:last-child { display: flex; flex-direction: column; }
+  .dl-list.dl-three .dl-guide > div:last-child p { flex: 1; }
+  .dl-list.dl-three .dl-guide .primary-button { align-self: flex-start; }
+}
