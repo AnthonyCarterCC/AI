@@ -352,3 +352,16 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 .soon-card ul { margin: 0 0 28px; padding-left: 20px; color: var(--ink-soft); line-height: 1.9; }
 .soon-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 @media (max-width: 560px) { .soon-card { padding: 26px 22px; } }
+
+/* Home: tighter, balanced desktop layout */
+@media (min-width: 1000px) {
+  .portal-hero { min-height: 600px; padding-top: 36px; padding-bottom: 44px; }
+  .portal-orbit { --ry: 270px; }
+  .principles { padding: 56px max(20px, calc((100% - 1180px) / 2)) 64px; }
+  .principles-head { display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: end; }
+  .principles-head .eyebrow { margin: 0 0 12px; }
+  .principles-head h2 { margin: 0; font-size: clamp(34px, 3.8vw, 52px); }
+  .principle-grid { margin-top: 38px; }
+  .principle-grid h3 { margin-top: 18px; }
+}
+@media (max-width: 999px) { .principles-head .eyebrow { margin-bottom: 14px; } }
