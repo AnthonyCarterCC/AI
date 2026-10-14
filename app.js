@@ -1,47 +1,57 @@
 const questions = [
-  { key: "easy", category: "Everyday fit", text: "A simple, polished all-rounder that is easy to start using", help: "Think quick questions, drafting, brainstorming and a smooth day-to-day experience." },
-  { key: "microsoft", category: "Your ecosystem", text: "Working directly with Word, Excel, PowerPoint, Outlook and Teams", help: "Rate this highly if Microsoft 365 is where most of your work already lives." },
-  { key: "google", category: "Your ecosystem", text: "Working closely with Gmail, Drive, Docs, Sheets and other Google services", help: "Rate this highly if you or your team run primarily on Google Workspace." },
-  { key: "writing", category: "Thinking & creating", text: "Thoughtful writing, editing and making sense of long documents", help: "For reports, proposals, policies, analysis and careful communication." },
-  { key: "research", category: "Research", text: "In-depth web research with useful sources and up-to-date information", help: "For comparing options, preparing briefs and investigating unfamiliar topics." },
-  { key: "coding", category: "Building", text: "Coding, debugging and turning an idea into a working tool", help: "This includes help for non-developers as well as experienced technical teams." },
-  { key: "media", category: "Creative work", text: "Creating and understanding images, audio, video or visual content", help: "Rate the importance of working beyond text—not your current skill level." },
-  { key: "live", category: "What’s happening now", text: "A strong pulse on breaking news, public conversation and what’s trending", help: "Especially relevant if real-time discussion and the X platform matter to your work." },
-  { key: "voice", category: "How you interact", text: "Voice input and useful mobile access", help: "For hands-free use, thinking out loud, accessibility and work on the move." },
-  { key: "business", category: "Business readiness", text: "Business controls, privacy options and fit with the tools my team already pays for", help: "For governed workplace adoption—not just personal experimentation." }
+  { key: "outlook", category: "Microsoft 365", text: "Catching up on emails and meetings, and drafting replies, inside Outlook and Teams", help: "Rate this highly if your day lives in Outlook and Teams and you want help right where you already work." },
+  { key: "officefiles", category: "Microsoft 365", text: "Building and fixing Word, Excel and PowerPoint files from a simple request", help: "For turning notes into a presentation, cleaning up a spreadsheet or tidying a long Word document." },
+  { key: "companydata", category: "Microsoft 365", text: "Answering questions from our own company files, emails and chats", help: "For finding that policy, quote or conversation without digging through SharePoint and your inbox." },
+  { key: "google", category: "Google", text: "Working inside Gmail, Google Docs, Sheets and Meet", help: "Rate this highly if you or your team run on Google Workspace." },
+  { key: "writing", category: "Writing", text: "Polished writing that reads like a careful person wrote it", help: "For proposals, policies, board papers and anything with your name on it." },
+  { key: "longdocs", category: "Documents", text: "Reading very long documents and pulling out what matters", help: "Contracts, tenders and 100-page reports: the clauses to watch, the numbers to check, the summary." },
+  { key: "research", category: "Research", text: "Researching a topic on the web and getting a report with sources", help: "For comparing suppliers, preparing a brief or getting across an unfamiliar topic." },
+  { key: "current", category: "Current events", text: "Up-to-the-minute news and what people are talking about today", help: "For work where this morning's headlines and public conversation really matter." },
+  { key: "data", category: "Numbers", text: "Analysing spreadsheets, spotting trends and building charts", help: "Drop in a sales or finance spreadsheet and ask what is going on." },
+  { key: "coding", category: "Building", text: "Building small tools, scripts or automations without being a developer", help: "A quick calculator, a report that updates itself, or a simple web page for your team." },
+  { key: "images", category: "Visuals", text: "Creating images, diagrams and graphics for slides and marketing", help: "Rate the importance of making visuals, not your current skill level." },
+  { key: "media", category: "Audio and video", text: "Understanding recordings, video, photos of whiteboards and scanned pages", help: "For meeting recordings, training videos, photographed notes and paper documents." },
+  { key: "voice", category: "On the move", text: "Talking to it by voice on a phone, hands-free", help: "For thinking out loud, driving, walking between meetings or accessibility." },
+  { key: "easy", category: "Adoption", text: "Easy enough that staff are productive on day one with no training", help: "Think of your least technical team member: could they start straight away?" },
+  { key: "cost", category: "Cost", text: "The lowest possible cost per person per month", help: "Rate this highly if budget is the deciding factor. See our AI pricing page for the figures." },
+  { key: "heavyuse", category: "How often", text: "Using it heavily all day without running into limits", help: "Rate this highly if people will lean on it constantly. Some tools use their allowance up faster than others." },
+  { key: "security", category: "Security", text: "Company data kept private, not used to train AI, with admin controls", help: "For governed adoption across a team, not just personal experimenting." },
+  { key: "teamwork", category: "Teamwork", text: "Sharing prompts, projects and knowledge across the team", help: "For a shared library of what works, so everyone does not start from scratch." },
+  { key: "agents", category: "Automation", text: "Having AI carry out multi-step jobs for me, such as collecting, checking, filling in and sending", help: "Rate this highly if you want it to do the legwork, not just answer questions." },
+  { key: "accuracy", category: "Accuracy", text: "Preferring “I’m not sure” to a confident guess", help: "For work where a made-up answer would be costly, so you want a tool that admits doubt." }
 ];
 
-// Directional capability profiles (1–10), reviewed October 2026.
+// Directional capability profiles (1–10), reviewed October 2026 (20 questions).
 // Keep these separate from UI code so the comparison can be audited and updated.
 const products = {
   ChatGPT: {
-    scores: { easy: 10, microsoft: 6, google: 7, writing: 9, research: 10, coding: 10, media: 10, live: 8, voice: 10, business: 9 },
+    scores: { outlook: 5, officefiles: 8, companydata: 5, google: 6, writing: 8, longdocs: 7, research: 9, current: 8, data: 9, coding: 9, images: 10, media: 8, voice: 10, easy: 10, cost: 6, heavyuse: 8, security: 8, teamwork: 8, agents: 9, accuracy: 7 },
     summary: "A strong all-round choice when you want one flexible tool for research, creation, analysis, coding and everyday questions.",
-    strengths: { easy: "polished all-round experience", research: "deep, source-backed research", coding: "strong building and coding tools", media: "broad image and file capabilities", voice: "voice input", business: "mature team and business options" },
+    strengths: { images: "strong image creation", voice: "excellent voice conversation", easy: "polished, easy to start", data: "strong spreadsheet and data analysis", research: "deep, source-backed research", agents: "capable multi-step task agents", coding: "strong building tools" },
     url: "https://chatgpt.com/", colour: "#10a37f", initial: "C", logo: "assets/logos/chatgpt.svg"
   },
   Claude: {
-    scores: { easy: 9, microsoft: 5, google: 7, writing: 10, research: 9, coding: 10, media: 6, live: 7, voice: 7, business: 9 },
+    scores: { outlook: 5, officefiles: 9, companydata: 5, google: 6, writing: 10, longdocs: 10, research: 8, current: 6, data: 8, coding: 10, images: 3, media: 4, voice: 6, easy: 9, cost: 6, heavyuse: 5, security: 8, teamwork: 8, agents: 8, accuracy: 10 },
     summary: "A particularly good fit for careful writing, long documents, nuanced thinking and collaborative coding or prototype work.",
-    strengths: { writing: "careful long-form writing and document work", coding: "strong coding and interactive Artifacts", research: "research with clear synthesis", business: "useful project knowledge and team controls", easy: "calm, focused interface" },
+    strengths: { writing: "careful, natural writing", longdocs: "excellent with very long documents", accuracy: "more willing to say it is unsure", coding: "strong at building tools and prototypes", officefiles: "good at Word, Excel and PowerPoint files", teamwork: "shared Projects for teams" },
     url: "https://claude.ai/", colour: "#d87955", initial: "C", logo: "assets/logos/claude.svg"
   },
   Gemini: {
-    scores: { easy: 9, microsoft: 4, google: 10, writing: 8, research: 10, coding: 9, media: 10, live: 9, voice: 10, business: 9 },
+    scores: { outlook: 3, officefiles: 6, companydata: 4, google: 10, writing: 8, longdocs: 10, research: 9, current: 8, data: 8, coding: 8, images: 9, media: 10, voice: 9, easy: 9, cost: 8, heavyuse: 9, security: 8, teamwork: 7, agents: 8, accuracy: 7 },
     summary: "A natural match when your work centres on Google, with excellent multimodal, research, mobile and Workspace integration.",
-    strengths: { google: "deep Google Workspace integration", research: "Deep Research and broad web access", media: "strong image, audio and video workflows", voice: "excellent mobile and live interaction", business: "enterprise options within Workspace" },
+    strengths: { google: "deep Google Workspace integration", longdocs: "handles very long documents", media: "strong video and audio understanding", cost: "included with many Google Workspace plans", heavyuse: "generous allowances for heavy use", voice: "excellent mobile and voice use", research: "Deep Research with broad web access" },
     url: "https://gemini.google.com/", colour: "#527ceb", initial: "G", logo: "assets/logos/gemini.svg"
   },
   Copilot: {
-    scores: { easy: 8, microsoft: 10, google: 3, writing: 8, research: 8, coding: 8, media: 8, live: 8, voice: 8, business: 10 },
+    scores: { outlook: 10, officefiles: 9, companydata: 10, google: 3, writing: 7, longdocs: 7, research: 7, current: 6, data: 8, coding: 6, images: 7, media: 7, voice: 7, easy: 8, cost: 7, heavyuse: 8, security: 10, teamwork: 6, agents: 7, accuracy: 7 },
     summary: "The clearest fit for organisations invested in Microsoft 365, especially when work already happens in Office, Outlook and Teams.",
-    strengths: { microsoft: "native Microsoft 365 fit", business: "strong organisational controls and Microsoft Graph context", writing: "assistance inside familiar Office workflows", research: "web-grounded research and workplace search", voice: "voice access across Copilot experiences" },
+    strengths: { outlook: "native in Outlook and Teams", companydata: "searches your own Microsoft 365 files, emails and chats", security: "strong organisational controls and data protection", officefiles: "works inside Word, Excel and PowerPoint", heavyuse: "light on allowances for everyday work", cost: "modest add-on cost for existing Microsoft 365 users" },
     url: "https://copilot.microsoft.com/", colour: "#7e57c2", initial: "C", logo: "assets/logos/copilot.svg"
   },
   Grok: {
-    scores: { easy: 8, microsoft: 3, google: 4, writing: 7, research: 8, coding: 8, media: 9, live: 10, voice: 8, business: 6 },
+    scores: { outlook: 2, officefiles: 3, companydata: 2, google: 3, writing: 6, longdocs: 6, research: 7, current: 10, data: 5, coding: 6, images: 8, media: 6, voice: 8, easy: 7, cost: 4, heavyuse: 6, security: 5, teamwork: 4, agents: 6, accuracy: 5 },
     summary: "A distinctive option if real-time public conversation, emerging news and the X ecosystem matter more than office-suite integration.",
-    strengths: { live: "real-time awareness and the X ecosystem", media: "capable visual and multimodal tools", research: "fast exploration of current topics", voice: "voice and mobile access", coding: "solid technical problem-solving" },
+    strengths: { current: "real-time awareness and the X platform", images: "capable image creation", voice: "voice and mobile access", research: "fast exploration of current topics" },
     url: "https://grok.com/", colour: "#202020", initial: "G", logo: "assets/logos/grok.svg"
   }
 };
