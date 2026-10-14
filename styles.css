@@ -556,7 +556,7 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
   .portal-hero .trust-row { margin-top: 18px; }
   .portal-hero .start-button { padding: 18px 38px; }
 }
-@media (min-width: 1100px) { body:has(.portal-hero) .site-header { width: min(1640px, calc(100% - 80px)); border-bottom: 0; } }
+@media (min-width: 1100px) { .site-header { width: min(1640px, calc(100% - 80px)); border-bottom: 0; } }
 
 /* Toolkit: start page */
 .tk { padding: 44px max(24px, calc((100% - 1180px) / 2)) 56px; position: relative; background-color: var(--cream); background-image: radial-gradient(circle at 8% 12%, rgba(126,87,194,.16), transparent 30%), radial-gradient(circle at 92% 10%, rgba(16,163,127,.15), transparent 28%), radial-gradient(circle at 88% 90%, rgba(216,121,85,.16), transparent 30%), radial-gradient(circle at 10% 92%, rgba(82,124,235,.15), transparent 30%), radial-gradient(circle, rgba(7,56,71,.08) 1.2px, transparent 1.6px); background-size: auto, auto, auto, auto, 30px 30px; }
