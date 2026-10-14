@@ -7,7 +7,7 @@ const questions = [
   { key: "coding", category: "Building", text: "Coding, debugging and turning an idea into a working tool", help: "This includes help for non-developers as well as experienced technical teams." },
   { key: "media", category: "Creative work", text: "Creating and understanding images, audio, video or visual content", help: "Rate the importance of working beyond text—not your current skill level." },
   { key: "live", category: "What’s happening now", text: "A strong pulse on breaking news, public conversation and what’s trending", help: "Especially relevant if real-time discussion and the X platform matter to your work." },
-  { key: "voice", category: "How you interact", text: "Natural voice conversations and useful mobile access", help: "For hands-free use, thinking out loud, accessibility and work on the move." },
+  { key: "voice", category: "How you interact", text: "Voice input and useful mobile access", help: "For hands-free use, thinking out loud, accessibility and work on the move." },
   { key: "business", category: "Business readiness", text: "Business controls, privacy options and fit with the tools my team already pays for", help: "For governed workplace adoption—not just personal experimentation." }
 ];
 
@@ -16,14 +16,14 @@ const questions = [
 const products = {
   ChatGPT: {
     scores: { easy: 10, microsoft: 6, google: 7, writing: 9, research: 10, coding: 10, media: 10, live: 8, voice: 10, business: 9 },
-    summary: "A strong all-round choice when you want one flexible assistant for research, creation, analysis, coding and conversation.",
-    strengths: { easy: "polished all-round experience", research: "deep, source-backed research", coding: "strong building and coding tools", media: "broad image and file capabilities", voice: "natural voice interaction", business: "mature team and business options" },
+    summary: "A strong all-round choice when you want one flexible tool for research, creation, analysis, coding and everyday questions.",
+    strengths: { easy: "polished all-round experience", research: "deep, source-backed research", coding: "strong building and coding tools", media: "broad image and file capabilities", voice: "voice input", business: "mature team and business options" },
     url: "https://chatgpt.com/", colour: "#10a37f", initial: "C", logo: "assets/logos/chatgpt.svg"
   },
   Claude: {
     scores: { easy: 9, microsoft: 5, google: 7, writing: 10, research: 9, coding: 10, media: 6, live: 7, voice: 7, business: 9 },
     summary: "A particularly good fit for careful writing, long documents, nuanced thinking and collaborative coding or prototype work.",
-    strengths: { writing: "careful long-form writing and document work", coding: "strong coding and interactive Artifacts", research: "research with clear synthesis", business: "useful project knowledge and team controls", easy: "calm, focused conversational experience" },
+    strengths: { writing: "careful long-form writing and document work", coding: "strong coding and interactive Artifacts", research: "research with clear synthesis", business: "useful project knowledge and team controls", easy: "calm, focused interface" },
     url: "https://claude.ai/", colour: "#d87955", initial: "C", logo: "assets/logos/claude.svg"
   },
   Gemini: {
@@ -41,7 +41,7 @@ const products = {
   Grok: {
     scores: { easy: 8, microsoft: 3, google: 4, writing: 7, research: 8, coding: 8, media: 9, live: 10, voice: 8, business: 6 },
     summary: "A distinctive option if real-time public conversation, emerging news and the X ecosystem matter more than office-suite integration.",
-    strengths: { live: "real-time awareness and the X ecosystem", media: "capable visual and multimodal tools", research: "fast exploration of current topics", voice: "conversational mobile access", coding: "solid technical problem-solving" },
+    strengths: { live: "real-time awareness and the X ecosystem", media: "capable visual and multimodal tools", research: "fast exploration of current topics", voice: "voice and mobile access", coding: "solid technical problem-solving" },
     url: "https://grok.com/", colour: "#202020", initial: "G", logo: "assets/logos/grok.svg"
   }
 };

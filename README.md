@@ -1,6 +1,6 @@
 # Commonsense AI Portal
 
-A growing portal for practical AI tools, training, prompt packs, downloadable resources and business guidance. The first live tool is a private, browser-only survey on its own `matchmaker.html` page that recommends one of five general-purpose AI assistants based on the user's priorities. The homepage also links to curated external training resources.
+A growing portal for practical AI tools, training, prompt packs, downloadable resources and business guidance. The first live tool is a private, browser-only survey on its own `matchmaker.html` page that recommends one of five general-purpose AI tools based on the user's priorities. The homepage also links to curated external training resources.
 
 ## Run locally
 
@@ -12,13 +12,20 @@ python -m http.server 4173
 
 Then open `http://localhost:4173`.
 
-## Deploy to GitHub Pages
+## Hosting and deployment
 
-1. Create a public GitHub repository and add these files to its default branch.
-2. In **Settings → Pages**, choose **Deploy from a branch**, then select the default branch and `/ (root)`.
-3. The included `CNAME` file configures `ai.commonsense.com.au` as the custom domain.
-4. At the DNS provider for `commonsense.com.au`, add a `CNAME` record named `ai` pointing to `<github-username>.github.io`.
-5. Return to GitHub Pages settings, confirm the custom domain, then enable **Enforce HTTPS** after DNS is active.
+Source lives on GitHub (`AnthonyCarterCC/AI`, `main` branch) and is served at `ai.commonsense.com.au` through Cloudflare, the same way as the main Commonsense website. Pushing to `main` publishes the change.
+
+1. Edit and test locally.
+2. Commit to `main` and push.
+3. Wait for the Cloudflare deployment to finish.
+4. Refresh and check the homepage, Matchmaker and privacy notice on the live domain.
+
+`CNAME` is left over from the original GitHub Pages setup and is harmless. `robots.txt` and `sitemap.xml` use the `.html` URLs the site currently serves, so update both if that changes.
+
+## Theme
+
+The site's theme is **Human judgement. AI capability.** AI is presented as a tool that works for people, never as a colleague, assistant or companion. Keep new copy consistent with that: lead with what the person can do, and avoid wording that gives AI human traits.
 
 ## Updating the comparison
 
