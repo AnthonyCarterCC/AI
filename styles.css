@@ -619,3 +619,24 @@ dialog h2 { margin: 0; font-size: 35px; letter-spacing: -.04em; } dialog h3 { ma
 @media (prefers-reduced-motion: reduce) { .tk-step, .tk-go { transition: none; } .tk-step:hover { transform: none; } }
 .tk-path { grid-template-rows: repeat(4, 1fr); }
 @media (max-width: 1000px) { .tk-path { grid-template-rows: none; } }
+
+/* Shared light palette: same soft colour and dot grid as the Toolkit, on every page */
+body { background-color: var(--cream); }
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(circle at 8% 12%, rgba(126,87,194,.16), transparent 30%), radial-gradient(circle at 92% 10%, rgba(16,163,127,.15), transparent 28%), radial-gradient(circle at 88% 90%, rgba(216,121,85,.16), transparent 30%), radial-gradient(circle at 10% 92%, rgba(82,124,235,.15), transparent 30%), radial-gradient(circle, rgba(7,56,71,.08) 1.2px, transparent 1.6px); background-size: auto, auto, auto, auto, 30px 30px; }
+.portal-tools, .pricing, .ops-models, .ops-result, .ops-intro, .ops-need, .ops-ten { background: transparent; }
+.portal-tools, .pricing, .ops-models, .ops-result, .ops-intro, .ops-need, .ops-ten, .ops-fit { border-top: 0; }
+.ops-fit { background: transparent; color: var(--ink); }
+.ops-fit .portal-heading > p { color: var(--ink-soft); }
+.fit-cols > div { background: rgba(255,254,250,.92); border: 1px solid var(--line); }
+.fit-yes li::before { color: #0f7f66; }
+.fit-no li::before { color: #b57f10; }
+.ops-sources { color: var(--ink-soft); }
+.ops-sources .inline-link { color: var(--ink); }
+.principles { background: transparent; color: var(--ink); padding-top: 56px; padding-bottom: 64px; }
+.principles .eyebrow.light { color: var(--ink); }
+.principles .eyebrow.light span { background: var(--gold); }
+.principle-grid article { border: 1px solid var(--line); border-radius: 22px; padding: 22px 24px 24px; background: rgba(255,254,250,.92); box-shadow: 0 10px 30px rgba(7,56,71,.07); }
+.principle-grid article > span { color: #b57f10; }
+.principle-grid p { color: var(--ink-soft); }
+.principles .inline-link { color: var(--ink); }
+.survey-shell { padding-top: 32px; }
