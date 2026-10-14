@@ -696,3 +696,27 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
   .dl-list.dl-three .dl-guide > div:last-child p { flex: 1; }
   .dl-list.dl-three .dl-guide .primary-button { align-self: flex-start; }
 }
+
+/* Training: YouTube prompt tool promo and tool page */
+.ytp-promo { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; margin-top: 36px; padding: 28px 32px; border-radius: var(--radius); background: var(--ink-deep); color: #fff; border-bottom: 3px solid var(--gold); }
+.ytp-promo .tag { display: inline-block; margin: 0 0 10px; font-family: Manrope, sans-serif; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.ytp-promo h2 { margin: 0 0 10px; font-family: Manrope, sans-serif; font-size: 26px; letter-spacing: -.03em; line-height: 1.15; }
+.ytp-promo p { margin: 0; max-width: 62ch; color: #d6dfe2; line-height: 1.6; }
+.ytp { max-width: 1180px; margin: 0 auto; padding: 56px 40px 72px; }
+.ytp-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 32px; margin-top: 36px; align-items: start; }
+.ytp-form, .ytp-out { padding: 28px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.ytp-step { display: flex; align-items: center; gap: 12px; margin: 0 0 14px; font-family: Manrope, sans-serif; font-weight: 800; font-size: 17px; color: var(--ink); }
+.ytp-step span { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--ink-deep); color: var(--gold); font-size: 15px; }
+.ytp-form label { display: block; margin: 18px 0 6px; font-weight: 700; color: var(--ink); }
+.ytp-form textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); font: inherit; line-height: 1.5; resize: vertical; }
+.ytp-form textarea:focus-visible { outline: 3px solid #7fb4c4; outline-offset: 2px; }
+.ytp-hint { margin: 6px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink-soft); }
+.ytp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; }
+.ytp-note { margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fbf1d4; border-left: 3px solid var(--gold); font-size: 14px; color: var(--ink); }
+.ytp-pre { margin: 0; max-height: 520px; overflow: auto; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; color: #26343a; font: 13px/1.55 ui-monospace, Menlo, Consolas, monospace; white-space: pre-wrap; word-break: break-word; }
+.ytp-pre mark { background: #ffe9a8; color: #6b4a00; border-radius: 4px; padding: 0 3px; }
+.ytp-copyrow { margin-bottom: 4px; }
+.ytp-copied { font-weight: 700; color: #2f7d58; }
+.ytp-foot { margin-top: 36px; }
+@media (max-width: 1000px) { .ytp-grid { grid-template-columns: 1fr; } .ytp-promo { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { .ytp { padding: 32px 16px 48px; } .ytp-form, .ytp-out { padding: 20px; } .ytp-promo { padding: 22px; } }

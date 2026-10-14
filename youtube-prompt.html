@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build a ready-to-paste prompt that finds credible, practical YouTube training from people who do the work. Fill in four boxes, copy it, and paste it into your own AI.">
+  <link rel="canonical" href="https://ai.commonsense.com.au/youtube-prompt.html">
+  <link rel="icon" href="assets/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#10231f">
+  <title>AI training: free and paid courses — Commonsense AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Commonsense AI home">
+      <img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165">
+      <span class="brand-ai">AI</span>
+    </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a class="hdr-cta nav-guide" href="assets/Which-AI-should-your-business-use.pdf" download>Download our free guide to AI</a>
+      <a class="hdr-cta nav-book" href="https://bookings.cloud.microsoft/bookwithme/user/3d1ee960caf04d3390cefdb40bc5f166@Commonsense.com.au/meetingtype/w-JzdmNtek-JqbTxssXAYw2?anonymous&amp;ismsaljsauthenabled&amp;ep=mcard" target="_blank" rel="noopener">Book a 30-minute Teams meeting with our specialists</a>
+      <a href="pricing.html">AI pricing</a>
+      <a href="toolkit.html">Toolkit</a>
+      <a href="training.html" aria-current="page">Training</a>
+      <a href="prompts.html">Prompts</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="onprem.html">On-premise AI</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+  </header>
+
+  <main id="top">
+    <section class="ytp" aria-labelledby="ytp-title">
+      <div class="portal-heading">
+        <div>
+          <p class="eyebrow"><span></span> Training tool</p>
+          <h1 id="ytp-title">YouTube expert research prompt.</h1>
+        </div>
+        <p>Most AI video advice comes from people who sell courses. This prompt asks your own AI to find practical training from people who do the work, and to explain why they are credible. Fill in four boxes, copy the result and paste it into your AI.</p>
+      </div>
+
+      <div class="ytp-grid">
+        <form class="ytp-form" id="ytp-form" onsubmit="return false" aria-label="Your details">
+          <div class="ytp-step"><span>1</span> Tell us what you want to learn</div>
+          <label for="f-SUBJECT">Subject</label>
+          <textarea id="f-SUBJECT" rows="3" placeholder="What do you want to learn about?"></textarea>
+          <p class="ytp-hint">Example: organising my working day, priorities, email, meetings, notes and to-do list using AI.</p>
+          <label for="f-PRODUCT">Product or technology</label>
+          <textarea id="f-PRODUCT" rows="2" placeholder="Which AI product or software?"></textarea>
+          <p class="ytp-hint">Example: Microsoft 365 Copilot, Claude, ChatGPT or Gemini. Leave blank if it does not matter.</p>
+          <label for="f-PERSON">Person I want to learn from</label>
+          <textarea id="f-PERSON" rows="3" placeholder="Whose experience is relevant to you?"></textarea>
+          <p class="ytp-hint">Example: an experienced business owner, CEO, COO, CIO, senior manager or corporate professional.</p>
+          <label for="f-CONTEXT">My context</label>
+          <textarea id="f-CONTEXT" rows="6" placeholder="Describe yourself, your job, your business or your situation. Say what you do not want to see."></textarea>
+          <p class="ytp-hint">Keep it general. Do not include client names or private details.</p>
+          <div class="ytp-actions">
+            <button type="button" class="secondary-button" id="ytp-example">Fill in an example</button>
+            <button type="button" class="secondary-button" id="ytp-reset">Clear</button>
+          </div>
+        </form>
+
+        <div class="ytp-out">
+          <div class="ytp-step"><span>2</span> Copy your prompt</div>
+          <p class="ytp-note" id="ytp-note" role="status" aria-live="polite"></p>
+          <pre class="ytp-pre" id="ytp-pre" tabindex="0" aria-label="Your prompt"></pre>
+          <div class="ytp-actions ytp-copyrow">
+            <button type="button" class="primary-button" id="ytp-copy">Copy prompt <span aria-hidden="true">&#x2398;</span></button>
+            <span class="ytp-copied" id="ytp-copied" role="status" aria-live="polite"></span>
+          </div>
+          <p class="ytp-hint">Paste it into Copilot, ChatGPT, Claude or Gemini. Pick a version of your AI that can search the web, so it can look up real videos. Check every link it gives you before you rely on it.</p>
+        </div>
+      </div>
+
+      <div class="soon-actions ytp-foot">
+        <a class="secondary-button" href="training.html">Back to training</a>
+        <a class="secondary-button" href="prompts.html">Browse the prompt library</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="index.html"><img class="brand-logo" src="assets/commonsense-logo.png" alt="Commonsense Consulting" width="693" height="165"><span class="brand-ai">AI</span></a>
+    <p class="footer-tagline">Human judgement. AI capability.</p>
+    <p>© <span id="year"></span> Commonsense AI · <a class="footer-link" href="toolkit.html">Toolkit</a> · <a class="footer-link" href="pricing.html">AI pricing</a> · <a class="footer-link" href="training.html">Training</a> · <a class="footer-link" href="privacy.html">Privacy</a></p>
+  </footer>
+<script src="ytp-template.js"></script>
+  <script src="ytp.js"></script>
+</body>
+</html>
