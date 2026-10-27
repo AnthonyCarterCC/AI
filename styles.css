@@ -733,3 +733,14 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 .tr-paid .tr-tag { color: #b9c9ff; }
 .tr-sec .tr-foot { margin: 22px 0 0; }
 @media (max-width: 720px) { .tr-sec { padding: 22px 16px 26px; border-radius: 22px; } }
+.tk-adv { margin-top: 40px; }
+.tk-adv h2 { margin: 0 0 14px; font-family: Manrope, sans-serif; font-size: 24px; letter-spacing: -.02em; color: var(--ink); }
+.tk-adv-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 22px 28px; border-radius: 22px; background: rgba(255,254,250,.92); border: 1px solid var(--line); color: var(--ink); text-decoration: none; box-shadow: 0 10px 30px rgba(7,56,71,.07); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.tk-adv-card:hover, .tk-adv-card:focus-visible { transform: translateY(-2px); border-color: #7e57c2; box-shadow: 0 16px 36px rgba(7,56,71,.14); }
+.tk-adv-body { display: grid; gap: 4px; }
+.tk-adv-body .tk-tag { margin: 0; }
+.tk-adv-body strong { font-family: Manrope, sans-serif; font-size: 21px; letter-spacing: -.02em; }
+.tk-adv-body > span { color: var(--ink-soft); font-size: 14.5px; line-height: 1.5; max-width: 720px; }
+.tk-adv-go { font-weight: 700; font-size: 15px; white-space: nowrap; }
+@media (max-width: 720px) { .tk-adv-card { grid-template-columns: 1fr; padding: 18px; gap: 14px; } .tk-adv-go { white-space: normal; } }
+@media (prefers-reduced-motion: reduce) { .tk-adv-card { transition: none; } .tk-adv-card:hover { transform: none; } }
